@@ -5,6 +5,12 @@
  */
 package biblioteca;
 
+import controlador.controlEmpleado;
+import controlador.controlFrame;
+import modelo.modeloEmpleado;
+import vista.Empleado;
+import vista.Frame;
+
 /**
  *
  * @author ITZEL
@@ -16,6 +22,9 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
         // TODO code application logic here     
+        Frame vista = new Frame();
+        controlFrame control = new controlFrame();
+        control.iniciar();
     }
     
 }
