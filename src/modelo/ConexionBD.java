@@ -21,7 +21,7 @@ public class ConexionBD {
         //Para conectarnos a nuestrza base de datos
         try{
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            con = DriverManager.getConnection("jdbc:mysql://192.168.43.12:3306/mydb", "root", "123456");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca", "root", "");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "No se pudo abrir la conexión con la BD.");
             con=null;
