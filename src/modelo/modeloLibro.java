@@ -8,10 +8,10 @@ public class modeloLibro {
     private String Genero;
     private String Autor;
     private String Editorial;
-    private int Paginas;
-    private Conexion conexion = new Conexion();
+    private String Paginas;
+    private ConexionBD conexion = new ConexionBD();
     
-    public boolean Insertar(String ISBN, String Titulo, String Genero, String Autor, String Editorial, int Paginas) {            
+    public boolean Insertar(String ISBN, String Titulo, String Genero, String Autor, String Editorial, String Paginas) {            
         try {
             Connection con = conexion.abrirConexion();
             //Para ejecutar la consulta

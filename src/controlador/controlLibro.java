@@ -37,8 +37,8 @@ public class controlLibro implements ActionListener, MouseListener{
         vista.txt_ISBN.setText("");
         vista.txt_Titulo.setText("");
         vista.txt_Autor.setText("");
-        vista.jcb_Genero.setSelectedIndex(0);
-        vista.jsp_Paginas.setValue(0);
+        vista.jcb_Genero.addItem("");
+        vista.jsp_Paginas.setValue("");
         vista.txt_Editorial.setText("");
      }
      
@@ -69,22 +69,17 @@ public class controlLibro implements ActionListener, MouseListener{
         else
              habilitar();
      }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
-     @Override
+    @Override
     public void actionPerformed(ActionEvent evento){
          CamposVacios();//Funcion para habilitar 
          if(vista.btn_Agregar == evento.getSource()) {
             if(validacionCamposVacios()==null)
             {
                 //Inserta Destino
-                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.setSelectedIndex(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.setValue())){
-                    JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-                    Limpiar();
+                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getActionCommand(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getName())){
+                JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
+                Limpiar();
                 }
             }
          else 
