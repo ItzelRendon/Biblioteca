@@ -8,7 +8,8 @@ import javax.swing.JOptionPane;
 import modelo.modeloLibro;
 import vista.Libro;
 
-public class controlLibro implements ActionListener, MouseListener{
+public class controlLibro implements ActionListener, MouseListener
+{
      private modeloLibro modelo;
      private Libro vista;
 
@@ -71,15 +72,18 @@ public class controlLibro implements ActionListener, MouseListener{
      }
     
     @Override
-    public void actionPerformed(ActionEvent evento){
+    public void actionPerformed(ActionEvent evento)
+    {
          CamposVacios();//Funcion para habilitar 
-         if(vista.btn_Agregar == evento.getSource()) {
+         if(vista.btn_Agregar == evento.getSource()) 
+         {
             if(validacionCamposVacios()==null)
             {
                 //Inserta Destino
-                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getActionCommand(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getName())){
-                JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-                Limpiar();
+                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getActionCommand(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getName()))
+                {
+                    JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
+                    Limpiar();
                 }
             }
          else 
