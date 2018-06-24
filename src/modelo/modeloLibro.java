@@ -20,7 +20,7 @@ public class modeloLibro {
             //Update en la tabla destino
             int registro = s.executeUpdate(
                  "insert into libro(isbn, titulo, genero, autor, editorial, paginas)values("
-                         + "'"+ISBN+"','"+Titulo+"','"+Genero+"',,'"+Autor+"','"+Editorial+"''"+Paginas+"');");
+                         +"'"+ISBN+"','"+Titulo+"','"+Genero+"','"+Autor+"','"+Editorial+"','"+Paginas+"');");
             
             conexion.cerrarConexion(con);
             return true;

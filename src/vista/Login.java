@@ -30,13 +30,13 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        labelnombre = new javax.swing.JLabel();
+        textonombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel19 = new javax.swing.JLabel();
+        labelcontraseña = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        textocontraseña = new javax.swing.JPasswordField();
+        botonentrar = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,39 +65,39 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(123, 124, 255));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Usuario");
+        labelnombre.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        labelnombre.setForeground(new java.awt.Color(255, 255, 255));
+        labelnombre.setText("Nombre");
 
-        jTextField4.setBackground(new java.awt.Color(123, 124, 255));
-        jTextField4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        textonombre.setBackground(new java.awt.Color(123, 124, 255));
+        textonombre.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textonombre.setForeground(new java.awt.Color(255, 255, 255));
+        textonombre.setBorder(null);
+        textonombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                textonombreActionPerformed(evt);
             }
         });
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Contraseña");
+        labelcontraseña.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        labelcontraseña.setForeground(new java.awt.Color(255, 255, 255));
+        labelcontraseña.setText("Contraseña");
 
-        jPasswordField1.setBackground(new java.awt.Color(123, 124, 255));
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(null);
+        textocontraseña.setBackground(new java.awt.Color(123, 124, 255));
+        textocontraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textocontraseña.setForeground(new java.awt.Color(255, 255, 255));
+        textocontraseña.setBorder(null);
 
-        jButton1.setBackground(new java.awt.Color(0, 38, 202));
-        jButton1.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Entrar");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonentrar.setBackground(new java.awt.Color(0, 38, 202));
+        botonentrar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        botonentrar.setForeground(new java.awt.Color(255, 255, 255));
+        botonentrar.setText("Entrar");
+        botonentrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Inicio de seción");
+        jLabel20.setText("Inicio de sesión");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -106,13 +106,13 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonentrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPasswordField1)
+                    .addComponent(textocontraseña)
                     .addComponent(jSeparator1)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextField4)
+                    .addComponent(labelnombre)
+                    .addComponent(labelcontraseña)
+                    .addComponent(textonombre)
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
                 .addGap(46, 46, 46))
         );
@@ -122,19 +122,19 @@ public class Login extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textonombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textocontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonentrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
 
@@ -156,9 +156,9 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void textonombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textonombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_textonombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,16 +197,16 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
+    public javax.swing.JButton botonentrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField4;
+    public javax.swing.JLabel labelcontraseña;
+    public javax.swing.JLabel labelnombre;
+    public javax.swing.JPasswordField textocontraseña;
+    public javax.swing.JTextField textonombre;
     // End of variables declaration//GEN-END:variables
 }
