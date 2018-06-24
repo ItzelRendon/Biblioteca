@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
-        <file>
-            <url>src/modelo/modeloLibro.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>15</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controlEmpleado.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/modelo/modeloEmpleado.java</file>
+            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/x.java</file>
+            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controlFrame.java</file>
+            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/biblioteca/Biblioteca.java</file>
             <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/Empleado.java</file>
         </group>
-=======
-        <group/>
->>>>>>> e88329a3d21dca5e1d3f01e68774076df872fca7
     </open-files>
 </project-private>

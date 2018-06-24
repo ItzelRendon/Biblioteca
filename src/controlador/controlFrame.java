@@ -17,14 +17,17 @@ public class controlFrame {
     
     private Frame vista;
     
-    public controlFrame()
+    public controlFrame(Frame vista)
     {
-        vista = null;
+        this.vista = vista;
     }
     
     public void iniciar()
             
     {
+        vista.setSize(495, 700);
+        vista.setLocationRelativeTo(null);
+        this.vista.setVisible(true);
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();

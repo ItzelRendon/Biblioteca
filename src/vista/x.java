@@ -9,12 +9,12 @@ package vista;
  *
  * @author Holi
  */
-public class Empleado extends javax.swing.JPanel {
+public class x extends javax.swing.JPanel {
 
     /**
-     * Creates new form Empleado
+     * Creates new form x
      */
-    public Empleado() {
+    public x() {
         initComponents();
     }
 
@@ -56,8 +56,6 @@ public class Empleado extends javax.swing.JPanel {
         cbbSucursal1 = new javax.swing.JComboBox<>();
         btnGuardar1 = new javax.swing.JButton();
         btnCancelar1 = new javax.swing.JButton();
-
-        setLayout(null);
 
         panelCambiante.setLayout(new javax.swing.BoxLayout(panelCambiante, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -270,13 +268,31 @@ public class Empleado extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE))
         );
 
         panelCambiante.add(jPanel8);
 
-        add(panelCambiante);
-        panelCambiante.setBounds(0, 0, 480, 710);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelCambiante, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelCambiante, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombre1ActionPerformed
