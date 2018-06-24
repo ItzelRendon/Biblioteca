@@ -97,7 +97,7 @@ public class Login extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Inicio de seción");
+        jLabel20.setText("Inicio de sesión");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

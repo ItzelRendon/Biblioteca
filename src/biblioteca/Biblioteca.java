@@ -29,9 +29,9 @@ public class Biblioteca {
     public static void main(String[] args) {
         // TODO code application logic here     
 //        Frame vista = new Frame();
-//        controlFrame control = new controlFrame();
+//        controlFrame control = new controlFrame(vista);
 //        control.iniciar();
-          
+       
           Login lo = new Login();
           modelologin mode = new modelologin();
           controllogin control = new controllogin(mode,lo);

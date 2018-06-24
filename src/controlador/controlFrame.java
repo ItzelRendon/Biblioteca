@@ -5,8 +5,10 @@
  */
 package controlador;
 
+import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
+import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
 import vista.Libro;
@@ -18,7 +20,7 @@ import vista.Libro;
 public class controlFrame {
     
     private Frame vista;
-    
+
     public controlFrame(Frame vista)
     {
         this.vista=vista;
@@ -45,5 +47,14 @@ public class controlFrame {
         //Y lo muestra.
         controlemp.iniciarVista();
     }
-    
+    public void iniciarVista()
+    {
+        this.vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
+        Cliente c= new Cliente(); 
+        modeloCliente m= new modeloCliente(); 
+        controlCliente co= new controlCliente(m,c); 
+        new CambiaPanel(this.vista.pnl_cambiante,c);
+        co.iniciarVista();
+    }
 }
