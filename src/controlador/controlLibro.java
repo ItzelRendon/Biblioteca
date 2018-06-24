@@ -8,17 +8,9 @@ import javax.swing.JOptionPane;
 import modelo.modeloLibro;
 import vista.Libro;
 
-<<<<<<< HEAD
 public class controlLibro implements ActionListener, MouseListener{
     private modeloLibro modelo;
     private Libro vista;
-=======
-public class controlLibro implements ActionListener, MouseListener
-{
-     private modeloLibro modelo;
-     private Libro vista;
->>>>>>> ced6e8dd9e2cc8126b9f855dee68cfb8b4e4eb71
-
     
     public controlLibro(modeloLibro modelo, Libro vista){
         this.modelo = modelo;
@@ -77,7 +69,6 @@ public class controlLibro implements ActionListener, MouseListener
     }
     
     @Override
-<<<<<<< HEAD
     public void actionPerformed(ActionEvent evento){
         CamposVacios();//Funcion para habilitar 
         if(vista.btn_Agregar == evento.getSource()) {
@@ -86,24 +77,10 @@ public class controlLibro implements ActionListener, MouseListener
                 if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getSelectedItem().toString(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getValue().toString())){
                 JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
                 Limpiar();
-=======
-    public void actionPerformed(ActionEvent evento)
-    {
-         CamposVacios();//Funcion para habilitar 
-         if(vista.btn_Agregar == evento.getSource()) 
-         {
-            if(validacionCamposVacios()==null)
-            {
-                //Inserta Destino
-                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getActionCommand(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getName()))
-                {
-                    JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-                    Limpiar();
->>>>>>> ced6e8dd9e2cc8126b9f855dee68cfb8b4e4eb71
-                }
             }
             else 
             JOptionPane.showMessageDialog(null, ""+validacionCamposVacios());
+            }
         }
         
         if(vista.btn_Cancelar == evento.getSource()){
