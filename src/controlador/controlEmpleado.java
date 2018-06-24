@@ -11,6 +11,7 @@ import vista.Empleado;
 import vista.Frame;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import vista.menu;
 
 /**
  *
@@ -22,10 +23,11 @@ public class controlEmpleado implements ActionListener{
     private Empleado vista;
     private Frame frame;
     
-    public controlEmpleado(modeloEmpleado modelo, Empleado vista)
+    public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame)
     {
         this.modelo = modelo;
         this.vista = vista;
+        this.frame = frame;
         this.vista.btnCancelar1.addActionListener(this);
         this.vista.btnGuardar1.addActionListener(this);
         
@@ -63,6 +65,20 @@ public class controlEmpleado implements ActionListener{
                 modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal);
                 
             }
+        }
+        if(vista.btnCancelar1 == e.getSource())
+        {
+            frame.pnl_cambiante.removeAll();
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+            menu vistaMenu = new menu();
+            controladorMenu control = new controladorMenu(vistaMenu, frame);
+            //Lo añade al panel
+            frame.pnl_cambiante.add(vistaMenu);
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+            //Y lo muestra.
+            control.iniciarVista();
         }
     }
 }

@@ -2,16 +2,8 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controlEmpleado.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/x.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controlFrame.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/biblioteca/Biblioteca.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/Empleado.java</file>
+            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/modelo/ConexionBD.java</file>
         </group>
->>>>>>> ced6e8dd9e2cc8126b9f855dee68cfb8b4e4eb71
     </open-files>
 </project-private>
