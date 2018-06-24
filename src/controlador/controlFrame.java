@@ -25,7 +25,7 @@ public class controlFrame {
     public void iniciar()
             
     {
-        vista.setSize(495, 700);
+        vista.setSize(500, 715);
         vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
         this.vista.pnl_cambiante.removeAll();
