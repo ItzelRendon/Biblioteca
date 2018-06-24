@@ -6,8 +6,10 @@
 package controlador;
 
 import modelo.modeloEmpleado;
+import modelo.modeloLibro;
 import vista.Empleado;
 import vista.Frame;
+import vista.Libro;
 
 /**
  *
@@ -17,21 +19,26 @@ public class controlFrame {
     
     private Frame vista;
     
-    public controlFrame()
+    public controlFrame(Frame vista)
     {
-        vista = null;
+        this.vista=vista;
     }
     
     public void iniciar()
             
     {
+        this.vista.setSize(500, 700);
+        this.vista.setVisible(true);
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
         //Crea objetos del siguiente panel
-        Empleado vistaemp = new Empleado();
-        modeloEmpleado modeloemp = new modeloEmpleado();
-        controlEmpleado controlemp = new controlEmpleado(modeloemp, vistaemp);
+//        Empleado vistaemp = new Empleado();
+//        modeloEmpleado modeloemp = new modeloEmpleado();
+//        controlEmpleado controlemp = new controlEmpleado(modeloemp, vistaemp);
+          Libro vistaemp = new Libro();
+          modeloLibro modeloemp = new modeloLibro();
+          controlLibro controlemp = new controlLibro(modeloemp, vistaemp);
         //Lo añade al panel
         this.vista.pnl_cambiante.add(vistaemp);
         this.vista.pnl_cambiante.revalidate();

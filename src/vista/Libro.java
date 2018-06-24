@@ -16,6 +16,7 @@ public class Libro extends javax.swing.JPanel {
      */
     public Libro() {
         initComponents();
+
     }
 
     /**
@@ -84,7 +85,8 @@ public class Libro extends javax.swing.JPanel {
         jLabel24.setText("Género");
 
         jcb_Genero.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
-        jcb_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Thriller", "Cinetifico", "Ficción", " " }));
+        jcb_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romántica", "Aventura", "Terror", "Ficcion / Realidad", "Ciencia Ficción", "Policial (o Thriller)", "Investigación", "Biográfica", "Infantil", "Autoayuda", "Cientifico", "Erótica", "Hogar", "Enciclopedia / Manual", "Política", "Economía / Marketing", "Sociedad", "Deportes", "Viajes / Cultura", "Otros temas / Varios" }));
+        jcb_Genero.setToolTipText("");
         jcb_Genero.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -110,6 +112,10 @@ public class Libro extends javax.swing.JPanel {
         jLabel22.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel22.setText("Editorial");
 
+        jsp_Paginas.setModel(new javax.swing.SpinnerNumberModel(0, 0, 2000, 1));
+        jsp_Paginas.setMaximumSize(new java.awt.Dimension(0, 32767));
+        jsp_Paginas.setMinimumSize(new java.awt.Dimension(0, 0));
+
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
         jLabel3.setText("Datos externos");
 
@@ -127,6 +133,11 @@ public class Libro extends javax.swing.JPanel {
         btn_Cancelar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btn_Cancelar.setText("Cancelar");
         btn_Cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -268,6 +279,10 @@ public class Libro extends javax.swing.JPanel {
     private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_AgregarActionPerformed
+
+    private void btn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
