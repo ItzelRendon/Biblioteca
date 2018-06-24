@@ -91,13 +91,13 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="52" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton1" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="botonentrar" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                       <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textocontraseña" alignment="0" max="32767" attributes="0"/>
                       <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="labelnombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelcontraseña" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="textonombre" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel20" alignment="0" pref="259" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
@@ -110,26 +110,26 @@
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="jLabel20" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="jLabel18" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="labelnombre" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField4" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="textonombre" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="11" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel19" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="labelcontraseña" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="textocontraseña" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" pref="11" max="-2" attributes="0"/>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="botonentrar" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel18">
+        <Component class="javax.swing.JLabel" name="labelnombre">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="16" style="1"/>
@@ -137,10 +137,13 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Usuario"/>
+            <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="textonombre">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="7c" red="7b" type="rgb"/>
@@ -156,12 +159,15 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textonombreActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel19">
+        <Component class="javax.swing.JLabel" name="labelcontrase&#xf1;a">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="16" style="1"/>
@@ -171,10 +177,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator2">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="textocontrase&#xf1;a">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="7c" red="7b" type="rgb"/>
@@ -189,8 +198,11 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="botonentrar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ca" green="26" red="0" type="rgb"/>
@@ -208,6 +220,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel20">
           <Properties>

@@ -21,13 +21,22 @@ public class controlFrame {
     
     public controlFrame(Frame vista)
     {
+<<<<<<< HEAD
         this.vista=vista;
+=======
+        this.vista = vista;
+>>>>>>> ced6e8dd9e2cc8126b9f855dee68cfb8b4e4eb71
     }
     
     public void iniciar()
             
     {
+<<<<<<< HEAD
         this.vista.setSize(500, 700);
+=======
+        vista.setSize(495, 700);
+        vista.setLocationRelativeTo(null);
+>>>>>>> ced6e8dd9e2cc8126b9f855dee68cfb8b4e4eb71
         this.vista.setVisible(true);
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
