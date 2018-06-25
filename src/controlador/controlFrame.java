@@ -6,9 +6,11 @@
 package controlador;
 
 import modelo.modeloEmpleado;
+import modelo.modeloInventario;
 import modelo.modeloLibro;
 import vista.Empleado;
 import vista.Frame;
+import vista.Inventario;
 import vista.Libro;
 
 /**
@@ -35,9 +37,9 @@ public class controlFrame {
 //        Empleado vistaemp = new Empleado();
 //        modeloEmpleado modeloemp = new modeloEmpleado();
 //        controlEmpleado controlemp = new controlEmpleado(modeloemp, vistaemp);
-          Libro vistaemp = new Libro();
-          modeloLibro modeloemp = new modeloLibro();
-          controlLibro controlemp = new controlLibro(modeloemp, vistaemp);
+          Inventario vistaemp = new Inventario();
+          modeloInventario modeloemp = new modeloInventario();
+          controlInventario controlemp = new controlInventario(modeloemp, vistaemp);
         //Lo añade al panel
         this.vista.pnl_cambiante.add(vistaemp);
         this.vista.pnl_cambiante.revalidate();
