@@ -13,6 +13,7 @@ import modelo.modeloEmpleado;
 import modelo.modeloLibro;
 import modelo.modelologin;
 import vista.Empleado;
+import vista.Frame;
 import vista.Libro;
 import vista.Login;
 
@@ -49,6 +50,9 @@ public class controllogin implements ActionListener
         if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))
         {
             JOptionPane.showMessageDialog(null, "Bienvenido");
+            Frame frame = new Frame();
+            controlFrame controlFrame = new controlFrame(frame);
+            controlFrame.iniciar();
         }
     }
 }

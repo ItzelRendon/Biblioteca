@@ -5,13 +5,16 @@
  */
 package controlador;
 
+import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloInventario;
 import modelo.modeloLibro;
+import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
 import vista.Inventario;
 import vista.Libro;
+import vista.menu;
 
 /**
  *
@@ -20,7 +23,7 @@ import vista.Libro;
 public class controlFrame {
     
     private Frame vista;
-    
+
     public controlFrame(Frame vista)
     {
         this.vista=vista;
@@ -29,10 +32,12 @@ public class controlFrame {
     public void iniciar()
             
     {
+        vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
+<<<<<<< HEAD
         //Crea objetos del siguiente panel
 //        Empleado vistaemp = new Empleado();
 //        modeloEmpleado modeloemp = new modeloEmpleado();
@@ -40,12 +45,25 @@ public class controlFrame {
           Inventario vistaemp = new Inventario();
           modeloInventario modeloemp = new modeloInventario();
           controlInventario controlemp = new controlInventario(modeloemp, vistaemp);
+=======
+        menu vistaMenu = new menu();
+        controladorMenu control = new controladorMenu(vistaMenu, vista);
+>>>>>>> 4250e0c18370ca36c0e79da35aa8e08a7becb6b8
         //Lo añade al panel
-        this.vista.pnl_cambiante.add(vistaemp);
+        this.vista.pnl_cambiante.add(vistaMenu);
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
         //Y lo muestra.
-        controlemp.iniciarVista();
+        control.iniciarVista();
     }
-    
+    public void iniciarVista()
+    {
+        this.vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
+        Cliente c= new Cliente(); 
+        modeloCliente m= new modeloCliente(); 
+        controlCliente co= new controlCliente(m,c); 
+        new CambiaPanel(this.vista.pnl_cambiante,c);
+        co.iniciarVista();
+    }
 }
