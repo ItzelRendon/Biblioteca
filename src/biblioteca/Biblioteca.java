@@ -5,6 +5,22 @@
  */
 package biblioteca;
 
+import controlador.controlEmpleado;
+import controlador.controlFrame;
+import controlador.controlInventario;
+import controlador.controllogin;
+import controlador.controlsucursal;
+import modelo.modeloEmpleado;
+import modelo.modeloInventario;
+import modelo.modelologin;
+import modelo.modelosucursal;
+import vista.Empleado;
+import vista.Frame;
+import vista.Inventario;
+import vista.Libro;
+import vista.Login;
+import vista.Sucursal;
+
 /**
  *
  * @author ITZEL
@@ -16,6 +32,22 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
         // TODO code application logic here     
+//        Frame vista = new Frame();
+//        controlFrame control = new controlFrame(vista);
+//        control.iniciar();
+<<<<<<< HEAD
+          
+          Inventario lo = new Inventario();
+          modeloInventario mode = new modeloInventario();
+          controlInventario control = new controlInventario(mode,lo);
+          control.iniciarVista();
+=======
+       
+          Login lo = new Login();
+          modelologin mode = new modelologin();
+          controllogin control = new controllogin(mode,lo);
+          control.iniciarvista();
+>>>>>>> 4250e0c18370ca36c0e79da35aa8e08a7becb6b8
     }
     
 }
