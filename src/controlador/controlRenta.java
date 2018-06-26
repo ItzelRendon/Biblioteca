@@ -103,12 +103,12 @@ public class controlRenta implements ActionListener, KeyListener{
         }
     }
     
-    public static void main(String[] args) {
-        modeloRenta modelo = new modeloRenta();
-        Renta vista = new Renta();
-        controlRenta control = new controlRenta(modelo, vista);
-        control.iniciarRenta();
-    }
+//    public static void main(String[] args) {
+//        modeloRenta modelo = new modeloRenta();
+//        Renta vista = new Renta();
+//        controlRenta control = new controlRenta(modelo, vista);
+//        control.iniciarRenta();
+//    }
 
     @Override
     public void keyTyped(KeyEvent e) {
