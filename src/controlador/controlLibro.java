@@ -6,15 +6,18 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.modeloLibro;
+import vista.Frame;
 import vista.Libro;
 
 public class controlLibro implements ActionListener, MouseListener{
     private modeloLibro modelo;
     private Libro vista;
+    private Frame frame;
     
-    public controlLibro(modeloLibro modelo, Libro vista){
+    public controlLibro(modeloLibro modelo, Libro vista, Frame frame){
         this.modelo = modelo;
         this.vista = vista;
+        this.frame = frame;
         this.vista.txt_ISBN.addActionListener(this);
         this.vista.txt_Titulo.addActionListener(this);
         this.vista.txt_Autor.addActionListener(this);
@@ -23,13 +26,16 @@ public class controlLibro implements ActionListener, MouseListener{
         this.vista.txt_Editorial.addActionListener(this);
         this.vista.btn_Agregar.addActionListener(this);
         this.vista.btn_Cancelar.addActionListener(this);
+        this.vista.tbl_libro.addMouseListener(this);
         
         desabilitar();
     }
      
     public void iniciarVista(){
         vista.setVisible(true);
+        vista.tbl_libro.setModel(modelo.destinoConsultar());
         this.vista.jcb_Genero.setSelectedItem(null);
+        this.vista.jcb_Sucursal.setSelectedItem(null);
     }
      
     //Limpia los JTextField
@@ -74,9 +80,15 @@ public class controlLibro implements ActionListener, MouseListener{
         if(vista.btn_Agregar == evento.getSource()) {
             if(validacionCamposVacios()==null)
             {
-                if(modelo.Insertar(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), vista.jcb_Genero.getSelectedItem().toString(), vista.txt_Autor.getText(), vista.txt_Editorial.getText(), vista.jsp_Paginas.getValue().toString())){
+                if(modelo.InsertarLibro(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), 
+                    vista.jcb_Genero.getSelectedItem().toString(), vista.txt_Autor.getText(), 
+                    vista.txt_Editorial.getText(), vista.jsp_Paginas.getValue().toString())){
+                    if(modelo.InsertarInventario(vista.txt_ISBN.getText(), 
+                        Integer.parseInt(vista.jcb_Genero.getSelectedItem().toString()), 
+                        Integer.parseInt(vista.jsp_Existencia.getValue().toString()))){   
                 JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
                 Limpiar();
+                }
             }
             else 
             JOptionPane.showMessageDialog(null, ""+validacionCamposVacios());

@@ -168,9 +168,8 @@
                       </Group>
                       <EmptySpace pref="85" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnInventario" min="-2" pref="137" max="-2" attributes="0"/>
                           <Component id="btnCliente" min="-2" pref="137" max="-2" attributes="0"/>
-                          <Component id="btnSucursal" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSucursal" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
@@ -179,22 +178,46 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="btnCliente" min="-2" pref="185" max="-2" attributes="0"/>
+=======
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnRenta" min="-2" pref="185" max="-2" attributes="0"/>
                           <Component id="btnCliente" min="-2" pref="185" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+>>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnLibro" min="-2" pref="185" max="-2" attributes="0"/>
-                          <Component id="btnInventario" min="-2" pref="185" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnLibro" min="-2" pref="185" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="btnSucursal" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+<<<<<<< HEAD
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEmpleado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="btnRenta" min="-2" pref="185" max="-2" attributes="0"/>
+                          <EmptySpace pref="377" max="32767" attributes="0"/>
+                      </Group>
+=======
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnEmpleado" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSucursal" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
+>>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
                   </Group>
               </Group>
             </DimensionLayout>
@@ -261,6 +284,8 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+<<<<<<< HEAD
+=======
             <Component class="javax.swing.JButton" name="btnInventario">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -293,6 +318,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+>>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
             <Component class="javax.swing.JButton" name="btnLibro">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -318,6 +344,9 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLibroActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
