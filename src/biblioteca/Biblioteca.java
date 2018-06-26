@@ -28,7 +28,6 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
         // TODO code application logic here     
-<<<<<<< HEAD
 //        Frame vista = new Frame();
 //        controlFrame control = new controlFrame();
 //        control.iniciar();
@@ -37,11 +36,10 @@ public class Biblioteca {
           modelologin mode = new modelologin();
           controllogin control = new controllogin(mode,lo);
           control.iniciarvista();
-=======
-        Frame vista = new Frame();
-        controlFrame control = new controlFrame(vista);
-        control.iniciar();
->>>>>>> 3036ee477f1bc9e6d17709395d633222e4bd9b86
+          
+//        Frame vista = new Frame();
+//        controlFrame controlprincipal = new controlFrame(vista);
+//        controlprincipal.iniciar();
     }
     
 }
