@@ -37,16 +37,12 @@ public class controladorMenu implements ActionListener{
     public void actionPerformed(ActionEvent e) {  
         if(vista.btnEmpleado == e.getSource())
         {
-            frame.pnl_cambiante.removeAll();
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
+            
             Empleado vistaEmpleado = new Empleado();
             modeloEmpleado modeloEmpleado = new modeloEmpleado();
             controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame);
-            //Lo añade al panel
-            frame.pnl_cambiante.add(vistaEmpleado);
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
+            //cambio de panel
+            CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaEmpleado);
             //Y lo muestra.
             controlEmpleado.iniciarVista();
         }

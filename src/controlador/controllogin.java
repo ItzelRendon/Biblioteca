@@ -9,12 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.modeloEmpleado;
-import modelo.modeloLibro;
 import modelo.modelologin;
-import vista.Empleado;
 import vista.Frame;
-import vista.Libro;
 import vista.Login;
 
 /**
@@ -52,6 +48,7 @@ public class controllogin implements ActionListener
             JOptionPane.showMessageDialog(null, "Bienvenido");
             Frame frame = new Frame();
             controlFrame controlFrame = new controlFrame(frame);
+            vista.setVisible(false);
             controlFrame.iniciar();
         }
     }

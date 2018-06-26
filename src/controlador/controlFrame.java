@@ -6,12 +6,8 @@
 package controlador;
 
 import modelo.modeloCliente;
-import modelo.modeloEmpleado;
-import modelo.modeloLibro;
 import vista.Cliente;
-import vista.Empleado;
 import vista.Frame;
-import vista.Libro;
 import vista.menu;
 
 /**
@@ -32,15 +28,12 @@ public class controlFrame {
     {
         vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
-        this.vista.pnl_cambiante.removeAll();
-        this.vista.pnl_cambiante.revalidate();
-        this.vista.pnl_cambiante.repaint();
         menu vistaMenu = new menu();
         controladorMenu control = new controladorMenu(vistaMenu, vista);
-        //Lo añade al panel
-        this.vista.pnl_cambiante.add(vistaMenu);
-        this.vista.pnl_cambiante.revalidate();
-        this.vista.pnl_cambiante.repaint();
+        //cambio de panel
+        CambiaPanel cp = new CambiaPanel(vista.pnl_cambiante, vistaMenu);
+        //hacer scroll más rapido
+         vista.scroll.getVerticalScrollBar().setUnitIncrement(16);
         //Y lo muestra.
         control.iniciarVista();
     }

@@ -9,7 +9,6 @@ package controlador;
  *
  * @author RojeruSan
  */
-import vista.*;
 import javax.swing.JPanel;
 
 public class CambiaPanel {

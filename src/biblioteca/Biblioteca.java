@@ -5,17 +5,9 @@
  */
 package biblioteca;
 
-import controlador.controlEmpleado;
-import controlador.controlFrame;
 import controlador.controllogin;
-import controlador.controlsucursal;
-import modelo.modeloEmpleado;
 import modelo.modelologin;
-import modelo.modelosucursal;
-import vista.Empleado;
-import vista.Frame;
 import vista.Login;
-import vista.Sucursal;
 
 /**
  *
