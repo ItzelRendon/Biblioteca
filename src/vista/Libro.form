@@ -36,9 +36,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <Component id="jLabel4" alignment="0" pref="507" max="32767" attributes="0"/>
               <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+=======
+              <Component id="jLabel4" max="32767" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
+>>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

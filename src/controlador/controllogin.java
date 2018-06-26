@@ -9,12 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.modeloEmpleado;
-import modelo.modeloLibro;
 import modelo.modelologin;
-import vista.Empleado;
 import vista.Frame;
-import vista.Libro;
 import vista.Login;
 
 /**
@@ -46,6 +42,7 @@ public class controllogin implements ActionListener
     
     @Override
     public void actionPerformed(ActionEvent e)
+<<<<<<< HEAD
     {       
         String usuario = vista.textonombre.getText();
         String contra = new String(vista.textocontraseña.getPassword());
@@ -69,3 +66,35 @@ public class controllogin implements ActionListener
         }
     }
 }
+=======
+    {
+
+        String usu = vista.textonombre.getText();
+        String contra = new String(vista.textocontraseña.getPassword());
+        
+        if(vista.botonentrar == e.getSource())
+        {   
+            switch (modelo.ingresar(usu, contra)) 
+            {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Bienvenido");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "USUARIO/CONTRASEÑA INCORRECTOS");
+                    break;
+                default:
+                    break;
+            }
+          // if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))  
+        if(vista.botonentrar == e.getSource()) 
+        {
+            JOptionPane.showMessageDialog(null, "Bienvenido");
+            Frame frame = new Frame();
+            controlFrame controlFrame = new controlFrame(frame);
+            vista.setVisible(false);
+            controlFrame.iniciar();
+
+        }
+    }
+}}
+>>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d

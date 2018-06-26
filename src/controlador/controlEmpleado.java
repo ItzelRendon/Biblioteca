@@ -68,15 +68,11 @@ public class controlEmpleado implements ActionListener{
         }
         if(vista.btnCancelar1 == e.getSource())
         {
-            frame.pnl_cambiante.removeAll();
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
             menu vistaMenu = new menu();
             controladorMenu control = new controladorMenu(vistaMenu, frame);
-            //Lo añade al panel
-            frame.pnl_cambiante.add(vistaMenu);
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
+            
+            //cambio de panel
+            CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaMenu);
             //Y lo muestra.
             control.iniciarVista();
         }
