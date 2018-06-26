@@ -17,7 +17,9 @@ import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelo.modeloRenta;
+import vista.Frame;
 import vista.Renta;
+import vista.menu;
 
 /**
  *
@@ -26,11 +28,14 @@ import vista.Renta;
 public class controlRenta implements ActionListener, KeyListener{
     private modelo.modeloRenta modelo;
     private vista.Renta vista;
+    private Frame frame;
+    
     DefaultListModel listModel;
 
-    public controlRenta(modeloRenta modelo, Renta vista) {
+    public controlRenta(modeloRenta modelo, Renta vista, Frame frame) {
         this.modelo = modelo;
         this.vista = vista;
+        this.frame = frame;
         
         this.vista.btnAgrLibro.addActionListener(this);
         this.vista.btnAgrRenta.addActionListener(this);
@@ -46,7 +51,26 @@ public class controlRenta implements ActionListener, KeyListener{
     }
 
     public void iniciarRenta(){
-        vista.setVisible(true);        
+        vista.setVisible(true);  
+        lipiarCajas();
+        
+    }
+        
+    public void lipiarCajas(){
+        this.vista.lblFechaD.setText("");
+        this.vista.lblFechaE.setText("");
+        
+        this.vista.txtIDCliente.setText("");
+        this.vista.txtISBN.setText("");
+        this.vista.txtNombreC.setText("");
+        this.vista.txtNombreL.setText("");
+        
+        //Limpia la lista
+        listModel.clear();
+       
+        //Limpiar el spinner
+        this.vista.spnCant.setValue(0);
+        
         //Fecha
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -64,34 +88,35 @@ public class controlRenta implements ActionListener, KeyListener{
         String fE = dateFormat.format(c.getTime());  // dt is now the new date
         vista.lblFechaD.setText(fE);
     }
-        
-    public void lipiarCajas(){
-        this.vista.lblFechaD.setText("");
-        this.vista.lblFechaE.setText("");
-        
-        this.vista.txtIDCliente.setText("");
-        this.vista.txtISBN.setText("");
-        this.vista.txtNombreC.setText("");
-        this.vista.txtNombreL.setText("");
-        
-        //Limpia la lista
-        listModel.clear();
-       
-        //Limpiar el spinner
-        this.vista.spnCant.setValue(0);
-    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista.btnCanRenta){
-            this.lipiarCajas();
+            String[] options = {"Limpiar Renta", "Volver al menú", "Permanecer aquí"};
+            int seleccion = JOptionPane.showOptionDialog(null, "¿Estás seguro que quieres cancelar?", "¡Atención!", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            
+            if(seleccion == 0)
+                this.lipiarCajas();
+           
+            if(seleccion == 1){
+                frame.pnl_cambiante.removeAll();
+                frame.pnl_cambiante.revalidate();
+                frame.pnl_cambiante.repaint();
+                menu vistaMenu = new menu();
+                controladorMenu control = new controladorMenu(vistaMenu, frame);
+                //Lo añade al panel
+                frame.pnl_cambiante.add(vistaMenu);
+                frame.pnl_cambiante.revalidate();
+                frame.pnl_cambiante.repaint();
+                //Y lo muestra.
+                control.iniciarVista();
+            }            
         }
         
         if(e.getSource() == vista.btnAgrLibro){
             
             System.out.println("txtnombrel: "+vista.txtNombreL.getText());
             int spn = (int) vista.spnCant.getValue();
-            System.out.println("spn: " + spn);
             if(vista.txtNombreL.getText().equals("") || vista.txtNombreL.getText().equals("ID Incorrecto") || spn == 0){
                     JOptionPane.showMessageDialog(null, "Introduce datos válidos");
             }
@@ -101,15 +126,24 @@ public class controlRenta implements ActionListener, KeyListener{
             }
                 
         }
+        
+        if(vista.btnAgrRenta == e.getSource()){
+            String[] libros = new String[vista.listLibros.getModel().getSize()];
+            for (int i = 0; i < vista.listLibros.getModel().getSize(); i++) {
+                 libros[i] = String.valueOf(vista.listLibros.getModel().getElementAt(i));
+            }
+            
+            if(!vista.txtIDCliente.equals("") && libros.length != 0){
+                //Guardar aquí
+                JOptionPane.showMessageDialog(null, "Éxito");   
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Datos incompletos");   
+            }
+        }
     }
     
-//    public static void main(String[] args) {
-//        modeloRenta modelo = new modeloRenta();
-//        Renta vista = new Renta();
-//        controlRenta control = new controlRenta(modelo, vista);
-//        control.iniciarRenta();
-//    }
-
     @Override
     public void keyTyped(KeyEvent e) {
     }
