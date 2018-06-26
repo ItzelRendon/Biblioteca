@@ -36,7 +36,6 @@ public class menu extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         btnCliente = new javax.swing.JButton();
         btnRenta = new javax.swing.JButton();
-        btnInventario = new javax.swing.JButton();
         btnLibro = new javax.swing.JButton();
         btnEmpleado = new javax.swing.JButton();
         btnSucursal = new javax.swing.JButton();
@@ -109,24 +108,6 @@ public class menu extends javax.swing.JPanel {
         btnRenta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRenta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        btnInventario.setBackground(new java.awt.Color(255, 255, 255));
-        btnInventario.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/libro-abierto.png"))); // NOI18N
-        btnInventario.setText("Inventario");
-        btnInventario.setBorder(null);
-        btnInventario.setBorderPainted(false);
-        btnInventario.setContentAreaFilled(false);
-        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnInventario.setDefaultCapable(false);
-        btnInventario.setFocusPainted(false);
-        btnInventario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnInventario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventarioActionPerformed(evt);
-            }
-        });
-
         btnLibro.setBackground(new java.awt.Color(255, 255, 255));
         btnLibro.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
         btnLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/libro.png"))); // NOI18N
@@ -139,6 +120,11 @@ public class menu extends javax.swing.JPanel {
         btnLibro.setFocusPainted(false);
         btnLibro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLibro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibroActionPerformed(evt);
+            }
+        });
 
         btnEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         btnEmpleado.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
@@ -177,9 +163,8 @@ public class menu extends javax.swing.JPanel {
                     .addComponent(btnEmpleado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSucursal, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnSucursal))
                 .addGap(61, 61, 61))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -192,14 +177,15 @@ public class menu extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(btnSucursal)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSucursal)
-                    .addComponent(btnEmpleado))
+                .addComponent(btnEmpleado)
                 .addContainerGap(19, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -248,15 +234,14 @@ public class menu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+    private void btnLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnInventarioActionPerformed
+    }//GEN-LAST:event_btnLibroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnEmpleado;
-    public javax.swing.JButton btnInventario;
     public javax.swing.JButton btnLibro;
     public javax.swing.JButton btnRenta;
     public javax.swing.JButton btnSucursal;

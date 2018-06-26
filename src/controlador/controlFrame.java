@@ -7,12 +7,11 @@ package controlador;
 
 import modelo.modeloCliente;
 import modelo.modeloEmpleado;
-import modelo.modeloInventario;
 import modelo.modeloLibro;
 import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
-import vista.Inventario;
+import vista.Libro;
 import vista.Libro;
 import vista.menu;
 
@@ -37,18 +36,8 @@ public class controlFrame {
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
-<<<<<<< HEAD
-        //Crea objetos del siguiente panel
-//        Empleado vistaemp = new Empleado();
-//        modeloEmpleado modeloemp = new modeloEmpleado();
-//        controlEmpleado controlemp = new controlEmpleado(modeloemp, vistaemp);
-          Inventario vistaemp = new Inventario();
-          modeloInventario modeloemp = new modeloInventario();
-          controlInventario controlemp = new controlInventario(modeloemp, vistaemp);
-=======
         menu vistaMenu = new menu();
         controladorMenu control = new controladorMenu(vistaMenu, vista);
->>>>>>> 4250e0c18370ca36c0e79da35aa8e08a7becb6b8
         //Lo añade al panel
         this.vista.pnl_cambiante.add(vistaMenu);
         this.vista.pnl_cambiante.revalidate();

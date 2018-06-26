@@ -8,8 +8,11 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.modeloEmpleado;
+import modelo.modeloLibro;
 import vista.Empleado;
 import vista.Frame;
+import vista.Libro;
+import vista.Libro;
 import vista.menu;
 
 /**
@@ -26,6 +29,7 @@ public class controladorMenu implements ActionListener{
         this.vista = vista;
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
+        this.vista.btnLibro.addActionListener(this);
     }
    
     public void iniciarVista()
@@ -50,9 +54,20 @@ public class controladorMenu implements ActionListener{
             //Y lo muestra.
             controlEmpleado.iniciarVista();
         }
-    }
-    
-    
-    
-    
+        if(vista.btnLibro == e.getSource())
+        {
+            frame.pnl_cambiante.removeAll();
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+            Libro vistaLibro = new Libro();
+            modeloLibro modeloLibro = new modeloLibro();
+            controlLibro controlLibro = new controlLibro(modeloLibro, vistaLibro, frame);
+            //Lo añade al panel
+            frame.pnl_cambiante.add(vistaLibro);
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+            //Y lo muestra.
+            controlLibro.iniciarVista();
+        }
+    }   
 }

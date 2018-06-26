@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
-        <file>
-            <url>src/modelo/modeloLibro.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>15</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
-        <group>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/modelo/ConexionBD.java</file>
-        </group>
->>>>>>> 4250e0c18370ca36c0e79da35aa8e08a7becb6b8
-    </open-files>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
 </project-private>

@@ -46,13 +46,26 @@ public class controllogin implements ActionListener
     
     @Override
     public void actionPerformed(ActionEvent e)
-    {
-        if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))
+    {       
+        String usuario = vista.textonombre.getText();
+        String contra = new String(vista.textocontraseña.getPassword());
+        if(vista.botonentrar == e.getSource())
         {
-            JOptionPane.showMessageDialog(null, "Bienvenido");
-            Frame frame = new Frame();
-            controlFrame controlFrame = new controlFrame(frame);
-            controlFrame.iniciar();
+            //JOptionPane.showMessageDialog(null, "Bienvenido");
+                    Frame frame = new Frame();
+                    controlFrame controlFrame = new controlFrame(frame);
+                    controlFrame.iniciar();
+//            switch (modelo.ingresar(usuario, contra)) {
+//                case 1:
+//                    JOptionPane.showMessageDialog(null, "Bienvenido");
+//                    Frame frame = new Frame();
+//                    controlFrame controlFrame = new controlFrame(frame);
+//                    controlFrame.iniciar();
+//                    break;
+//                case 2:
+//                    JOptionPane.showMessageDialog(null, "USUARIO/CONTRASEÑA INCORRECTOS");
+//                    break;
+//                }
         }
     }
 }
