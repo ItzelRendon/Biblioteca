@@ -5,24 +5,11 @@
  */
 package biblioteca;
 
-<<<<<<< HEAD
 import controlador.controllogin;
+import java.sql.Connection;
+import java.sql.SQLException;
+import modelo.ConexionBD;
 import modelo.modelologin;
-=======
-import controlador.controlEmpleado;
-import controlador.controlFrame;
-import controlador.controlInventario;
-import controlador.controllogin;
-import controlador.controlsucursal;
-import modelo.modeloEmpleado;
-import modelo.modeloInventario;
-import modelo.modelologin;
-import modelo.modelosucursal;
-import vista.Empleado;
-import vista.Frame;
-import vista.Inventario;
-import vista.Libro;
->>>>>>> 4e1de275e42511786e07552a3481ff61435f3def
 import vista.Login;
 
 /**
@@ -45,7 +32,20 @@ public class Biblioteca {
           controllogin control = new controllogin(mode,lo);
           control.iniciarvista();
 
-          
+//          try{
+//              ConexionBD miConexion = new ConexionBD();
+//            //Para abrir una conexion a la BD
+//            Connection con = miConexion.abrirConexion();
+//            if(con!=null)
+//                System.out.print("Conexion abierta");
+//            
+//            if(!con.isClosed()){
+//                miConexion.cerrarConexion(con);
+//                System.out.print("Conexion cerrada");
+//            }
+    //        }catch(SQLException e){
+    //            System.out.print("ERROR");
+    //        }  
 //        Frame vista = new Frame();
 //        controlFrame controlprincipal = new controlFrame(vista);
 //        controlprincipal.iniciar();

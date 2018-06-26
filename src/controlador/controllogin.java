@@ -53,6 +53,10 @@ public class controllogin implements ActionListener
             {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Bienvenido");
+                    Frame frame = new Frame();
+                    controlFrame controlFrame = new controlFrame(frame);
+                    vista.setVisible(false);
+                    controlFrame.iniciar();
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "USUARIO/CONTRASEÑA INCORRECTOS");
@@ -61,14 +65,6 @@ public class controllogin implements ActionListener
                     break;
             }
           // if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))  
-        if(vista.botonentrar == e.getSource()) 
-        {
-            JOptionPane.showMessageDialog(null, "Bienvenido");
-            Frame frame = new Frame();
-            controlFrame controlFrame = new controlFrame(frame);
-            vista.setVisible(false);
-            controlFrame.iniciar();
-
-        }
+       
     }
 }}
