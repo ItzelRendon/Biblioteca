@@ -7,8 +7,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloRenta;
+import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
 import vista.Renta;
@@ -29,6 +31,7 @@ public class controladorMenu implements ActionListener{
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
         this.vista.btnRenta.addActionListener(this);
+        this.vista.btnCliente.addActionListener(this);
     }
    
     public void iniciarVista()
@@ -66,6 +69,13 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
              //Y lo muestra.
             controlRenta.iniciarRenta();
+        }
+        else if(vista.btnCliente == e.getSource()){
+            Cliente v = new Cliente();
+            modeloCliente m = new modeloCliente();
+            controlCliente con = new controlCliente(m, v, frame);
+            new CambiaPanel(frame.pnl_cambiante,v); 
+            con.iniciarVista();
         }
     }
     

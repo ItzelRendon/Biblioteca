@@ -53,14 +53,4 @@ public class controlFrame {
         //Y lo muestra.
         control.iniciarVista();
     }
-    public void iniciarVista()
-    {
-        this.vista.setVisible(true);
-        vista.setLocationRelativeTo(null);
-        Cliente c= new Cliente(); 
-        modeloCliente m= new modeloCliente(); 
-        controlCliente co= new controlCliente(m,c); 
-        new CambiaPanel(this.vista.pnl_cambiante,c);
-        co.iniciarVista();
-    }
 }
