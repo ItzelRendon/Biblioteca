@@ -108,6 +108,11 @@ public class menu extends javax.swing.JPanel {
         btnRenta.setFocusPainted(false);
         btnRenta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRenta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRentaActionPerformed(evt);
+            }
+        });
 
         btnInventario.setBackground(new java.awt.Color(255, 255, 255));
         btnInventario.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
@@ -243,6 +248,10 @@ public class menu extends javax.swing.JPanel {
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void btnRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRentaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

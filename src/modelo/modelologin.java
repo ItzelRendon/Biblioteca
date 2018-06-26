@@ -21,25 +21,52 @@ import javax.swing.JTextField;
  */
 public class modelologin {
     private ConexionBD conexion = new ConexionBD();
+    private String usu;
+    private String contra;
     
-    public void ingresar(String usu, String contra)
+    public int ingresar(String usu, String contra)
     {
-        int control=0;
-        ResultSet sql;       
+        ResultSet sql; 
+        String ca ="";
+        int bandera=0;
          try {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
             sql = s.executeQuery("SELECT * FROM login WHERE usuario='" + usu + "' && contraseña='" + contra + "' ");
+//            while(sql.next())
+//            {
+//                nombre = sql.getString("usuario");
+//                contraseña = sql.getString("contraseña");
+//            }
+//            if(nombre.equals(usu) || contraseña.equals(contra))
+//            {
+//                bandera = 1;
+//            }
+//            else
+//            {
+//                bandera = 2;
+//            }
+            while(sql.next())
+            {
+                ca = sql.getString("tipo");
+            }
+            if(ca.equals("empleado"))
+            {
+                bandera = 1;
+            }
+            else
+            {
+                bandera = 2;
+            }
            conexion.cerrarConexion(con);
         }
          catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+            
         } catch (SQLException ex) {
             Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-    }
-
-    public boolean ingresar(JTextField textonombre, JPasswordField textocontraseña) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return bandera;
     }
 }
