@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/alfredo/Documents/GitHub/Fleetock/Biblioteca/src/biblioteca/Biblioteca.java</file>
+            <file>file:/C:/Users/alfredo/Documents/GitHub/Fleetock/Biblioteca/src/controlador/controllogin.java</file>
+=======
             <file>file:/C:/Users/ITZEL/Documents/Upsin/6-Cuatrimestre/BD%20Distribuidas/Corte2/Biblioteca/src/controlador/controlFrame.java</file>
             <file>file:/C:/Users/ITZEL/Documents/Upsin/6-Cuatrimestre/BD%20Distribuidas/Corte2/Biblioteca/src/modelo/modeloRenta.java</file>
             <file>file:/C:/Users/ITZEL/Documents/Upsin/6-Cuatrimestre/BD%20Distribuidas/Corte2/Biblioteca/src/controlador/controlRenta.java</file>
             <file>file:/C:/Users/ITZEL/Documents/Upsin/6-Cuatrimestre/BD%20Distribuidas/Corte2/Biblioteca/src/modelo/ConexionBD.java</file>
+>>>>>>> d51c98100876385768c7ec45aa4ebbf5d3e3e87e
         </group>
     </open-files>
 </project-private>

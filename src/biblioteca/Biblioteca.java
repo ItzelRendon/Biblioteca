@@ -40,6 +40,13 @@ public class Biblioteca {
           modelologin mode = new modelologin();
           controllogin control = new controllogin(mode,lo);
           control.iniciarvista();
+<<<<<<< HEAD
+          
+//        Frame vista = new Frame();
+//        controlFrame controlprincipal = new controlFrame(vista);
+//        controlprincipal.iniciar();
+=======
+>>>>>>> d51c98100876385768c7ec45aa4ebbf5d3e3e87e
     }
     
 }
