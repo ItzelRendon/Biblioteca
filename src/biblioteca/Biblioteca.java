@@ -26,6 +26,7 @@ public class Biblioteca {
 //        Frame vista = new Frame();
 //        controlFrame control = new controlFrame(vista);
 //        control.iniciar();
+
 //          Login lo = new Login();
 //          modelologin mode = new modelologin();
 //          controllogin control = new controllogin(mode,lo);
@@ -33,6 +34,13 @@ public class Biblioteca {
             elegirsucursal vistasu = new elegirsucursal();
             controlelegirsucursal cs = new controlelegirsucursal(vistasu);
             cs.iniciarVista();
+//          Login lo = new Login();
+//          modelo.modelologin mode = new modelologin();
+//          controllogin control = new controllogin(mode,lo);
+//          control.iniciarvista();
+    }   
+}
+
 
 //          try{
 //              ConexionBD miConexion = new ConexionBD();
@@ -53,6 +61,5 @@ public class Biblioteca {
 //        controlprincipal.iniciar();
 
 
-    }
     
-}
+    

@@ -61,12 +61,11 @@ public class modelologin {
         }
          catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
-            
         }
-         return bandera;
+         return bandera;        
     }
     
         //En esta funcion se usua para obtener informacion del usuario
