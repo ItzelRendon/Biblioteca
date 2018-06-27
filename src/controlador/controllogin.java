@@ -54,10 +54,11 @@ public class controllogin implements ActionListener
             switch (modelo.ingresar(usu, contra)) 
             {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Bienvenido" + controlelegirsucursal.ip);
+                    JOptionPane.showMessageDialog(null, "Bienvenido " +controlelegirsucursal.ip);
                     Frame frame = new Frame();
                     controlFrame controlFrame = new controlFrame(frame, modelo.jalarIdEmpleado(usu, contra,controlelegirsucursal.ip));
                     controlFrame.iniciar();
+                    vista.setVisible(false);
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "USUARIO/CONTRASEÑA INCORRECTOS");

@@ -33,7 +33,6 @@ public class controlCliente implements ActionListener{
         this.empleado = empleado;
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
-        this.vista.btnRegresar.addActionListener(this);
     }
     public void iniciarVista()// Metodo que permite mostra la vista Cliente
     {
@@ -98,13 +97,11 @@ public class controlCliente implements ActionListener{
                JOptionPane.showMessageDialog(null, ""+validacionCamposVacios());
         }
         else if(vista.btnCancelar == ae.getSource())
-                limpiar();
-        else if(vista.btnRegresar == ae.getSource())
-        {
-            menu vistaMenu = new menu();
-            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
-            new CambiaPanel(frame.pnl_cambiante,vistaMenu);
-            control.iniciarVista();
-        }
+                {
+                    menu vistaMenu = new menu();
+                    controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
+                    new CambiaPanel(frame.pnl_cambiante,vistaMenu);
+                    control.iniciarVista();
+                }
     }
 }

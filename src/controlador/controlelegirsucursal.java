@@ -52,6 +52,7 @@ public class controlelegirsucursal implements ActionListener{
     
     public void iniciarVista()
     {
+        this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }
 
@@ -76,12 +77,12 @@ public class controlelegirsucursal implements ActionListener{
             {
                 ip = "localhost";
             }
-            JOptionPane.showMessageDialog(null, "La ip es: " + ip);
+            //JOptionPane.showMessageDialog(null, "La ip es: " + ip);
             
-            vista.panel_elegir.removeAll();
-            vista.panel_elegir.revalidate();
-            vista.panel_elegir.repaint();
-            
+//            vista.panel_elegir.removeAll();
+//            vista.panel_elegir.revalidate();
+//            vista.panel_elegir.repaint();
+            vista.setVisible(false);
             Login lo = new Login();
             modelologin mode = new modelologin();
             controllogin control2 = new controllogin(mode,lo,ip);
