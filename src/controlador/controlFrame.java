@@ -5,11 +5,8 @@
  */
 package controlador;
 
-<<<<<<< HEAD
-=======
 import modelo.modeloCliente;
 import vista.Cliente;
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
 import vista.Frame;
 import vista.menu;
 
@@ -36,14 +33,8 @@ public class controlFrame {
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
-<<<<<<< HEAD
-        menu vistaMenu = new menu();
-        controladorMenu control = new controladorMenu(vistaMenu, vista);
-        //cambio de panel
-        CambiaPanel cp = new CambiaPanel(vista.pnl_cambiante, vistaMenu);
         //hacer scroll más rapido
          vista.scroll.getVerticalScrollBar().setUnitIncrement(16);
-=======
         //Crea objetos del siguiente panel
         menu vistaMenu = new menu();
         controladorMenu control = new controladorMenu(vistaMenu, vista, empleado);
@@ -51,7 +42,6 @@ public class controlFrame {
         this.vista.pnl_cambiante.add(vistaMenu);
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
         //Y lo muestra.
         control.iniciarVista();
     }

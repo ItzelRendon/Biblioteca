@@ -42,11 +42,7 @@ public class controllogin implements ActionListener
     
     @Override
     public void actionPerformed(ActionEvent e)
-<<<<<<< HEAD
     {
-=======
-    {       
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
         String usu = vista.textonombre.getText();
         String contra = new String(vista.textocontraseña.getPassword());
         
@@ -57,12 +53,7 @@ public class controllogin implements ActionListener
                 case 1:
                     JOptionPane.showMessageDialog(null, "Bienvenido");
                     Frame frame = new Frame();
-<<<<<<< HEAD
-                    controlFrame controlFrame = new controlFrame(frame);
-                    vista.setVisible(false);
-=======
                     controlFrame controlFrame = new controlFrame(frame, modelo.jalarIdEmpleado(usu, contra));
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
                     controlFrame.iniciar();
                     break;
                 case 2:
@@ -71,17 +62,16 @@ public class controllogin implements ActionListener
                 default:
                     break;
             }
-<<<<<<< HEAD
+
     }
 }}
-=======
 
-        }
+
+        
 
           // if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))  
        
 
-    }
-}
+    
 
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
+

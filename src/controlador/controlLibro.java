@@ -22,12 +22,14 @@ public class controlLibro implements ActionListener, MouseListener{
     private Libro vista;
     private Libro2 vista2;
     private Frame frame;
+    private String [] empleado;
     
-    public controlLibro(modeloLibro modelo, Libro vista, Frame frame, Libro2 vista2){
+    public controlLibro(modeloLibro modelo, Libro vista, Frame frame, Libro2 vista2, String [] empleado){
         this.modelo = modelo;
         this.vista = vista;
         this.vista2 = vista2;
         this.frame = frame;
+        this.empleado = empleado;
         this.vista.txt_ISBN.addActionListener(this);
         this.vista.txt_Titulo.addActionListener(this);
         this.vista.txt_Autor.addActionListener(this);
@@ -121,7 +123,7 @@ public class controlLibro implements ActionListener, MouseListener{
             Limpiar();
             desabilitar();
             menu vistaMenu = new menu();
-            controladorMenu control = new controladorMenu(vistaMenu, frame);
+            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
             new CambiaPanel(frame.pnl_cambiante,vistaMenu);
             control.iniciarVista();
         }
