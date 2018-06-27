@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class modeloEmpleado {
     private ConexionBD conexion = new ConexionBD();
     
-    public boolean agregarEmpleado(String nombre, String apellidos, String puesto, String telefono, String domicilio, String rfc, String correo, int sucursal) {            
+    public boolean agregarEmpleado(String nombre, String apellidos, String puesto, String telefono, String domicilio, String rfc, String correo, String sucursal) {            
         try {
             Connection con = conexion.abrirConexion();
             //Para ejecutar la consulta

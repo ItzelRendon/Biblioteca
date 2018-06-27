@@ -11,7 +11,6 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-57,0,0,1,-32"/>
   </AuxValues>
 
   <Layout>
@@ -97,10 +96,7 @@
                                           <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                           <Component id="cbbPuesto1" min="-2" pref="134" max="-2" attributes="0"/>
-                                          <EmptySpace pref="37" max="32767" attributes="0"/>
-                                          <Component id="jLabel33" min="-2" pref="63" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="cbbSucursal1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <EmptySpace min="152" pref="252" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtDomicilio1" alignment="0" max="32767" attributes="0"/>
@@ -164,8 +160,6 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel32" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="cbbPuesto1" alignment="3" max="32767" attributes="0"/>
-                              <Component id="jLabel33" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="cbbSucursal1" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -395,28 +389,6 @@
                         <StringItem index="3" value="Asistente"/>
                         <StringItem index="4" value="Director"/>
                       </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel33">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Light" size="14" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Sucursal"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="cbbSucursal1">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Light" size="14" style="0"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
