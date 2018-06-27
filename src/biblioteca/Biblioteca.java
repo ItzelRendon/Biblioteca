@@ -6,9 +6,11 @@
 package biblioteca;
 
 
+import controlador.controlelegirsucursal;
 import controlador.controllogin;
 import modelo.modelologin;
 import vista.Login;
+import vista.elegirsucursal;
 
 /**
  *
@@ -24,10 +26,13 @@ public class Biblioteca {
 //        Frame vista = new Frame();
 //        controlFrame control = new controlFrame(vista);
 //        control.iniciar();
-          Login lo = new Login();
-          modelologin mode = new modelologin();
-          controllogin control = new controllogin(mode,lo);
-          control.iniciarvista();
+//          Login lo = new Login();
+//          modelologin mode = new modelologin();
+//          controllogin control = new controllogin(mode,lo);
+//          control.iniciarvista();
+            elegirsucursal vistasu = new elegirsucursal();
+            controlelegirsucursal cs = new controlelegirsucursal(vistasu);
+            cs.iniciarVista();
 
 //          try{
 //              ConexionBD miConexion = new ConexionBD();

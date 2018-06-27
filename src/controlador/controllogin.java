@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import modelo.modelologin;
 import vista.Frame;
 import vista.Login;
+import controlador.controlelegirsucursal;
 
 /**
  *
@@ -21,11 +22,13 @@ public class controllogin implements ActionListener
 {
     private modelologin modelo;
     private Login vista;
+    private String ip;
     
-    public controllogin(modelologin modelo, Login vista)
+    public controllogin(modelologin modelo, Login vista, String ip)
     {
         this.modelo = modelo;
-        this.vista = vista;
+        this.vista = vista; 
+        this.ip = ip; 
         this.vista.textonombre.addActionListener(this);
         this.vista.textocontraseña.addActionListener(this);
         this.vista.botonentrar.addActionListener(this);
@@ -51,9 +54,9 @@ public class controllogin implements ActionListener
             switch (modelo.ingresar(usu, contra)) 
             {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Bienvenido");
+                    JOptionPane.showMessageDialog(null, "Bienvenido" + controlelegirsucursal.ip);
                     Frame frame = new Frame();
-                    controlFrame controlFrame = new controlFrame(frame, modelo.jalarIdEmpleado(usu, contra));
+                    controlFrame controlFrame = new controlFrame(frame, modelo.jalarIdEmpleado(usu, contra,controlelegirsucursal.ip));
                     controlFrame.iniciar();
                     break;
                 case 2:
