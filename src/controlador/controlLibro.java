@@ -6,17 +6,27 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.modeloLibro;
+import modelo.modeloLibro2;
 import vista.Frame;
 import vista.Libro;
+import vista.Libro2;
+import vista.menu;
+
+/**
+ *
+ * @author Adriana
+ */
 
 public class controlLibro implements ActionListener, MouseListener{
     private modeloLibro modelo;
     private Libro vista;
+    private Libro2 vista2;
     private Frame frame;
     
-    public controlLibro(modeloLibro modelo, Libro vista, Frame frame){
+    public controlLibro(modeloLibro modelo, Libro vista, Frame frame, Libro2 vista2){
         this.modelo = modelo;
         this.vista = vista;
+        this.vista2 = vista2;
         this.frame = frame;
         this.vista.txt_ISBN.addActionListener(this);
         this.vista.txt_Titulo.addActionListener(this);
@@ -26,14 +36,13 @@ public class controlLibro implements ActionListener, MouseListener{
         this.vista.txt_Editorial.addActionListener(this);
         this.vista.btn_Agregar.addActionListener(this);
         this.vista.btn_Cancelar.addActionListener(this);
-        this.vista.tbl_libro.addMouseListener(this);
+        this.vista.btn_Inventario.addActionListener(this);
         
         desabilitar();
     }
      
     public void iniciarVista(){
         vista.setVisible(true);
-        vista.tbl_libro.setModel(modelo.destinoConsultar());
         this.vista.jcb_Genero.setSelectedItem(null);
         this.vista.jcb_Sucursal.setSelectedItem(null);
     }
@@ -45,6 +54,8 @@ public class controlLibro implements ActionListener, MouseListener{
         vista.txt_Autor.setText("");
         vista.jcb_Genero.setSelectedItem(null);
         vista.jsp_Paginas.setValue(0);
+        vista.jcb_Sucursal.setSelectedItem(null);
+        vista.jsp_Existencia.setValue(0);
         vista.txt_Editorial.setText("");
     }
      
@@ -80,12 +91,23 @@ public class controlLibro implements ActionListener, MouseListener{
         if(vista.btn_Agregar == evento.getSource()) {
             if(validacionCamposVacios()==null)
             {
+                int sucursal=0;
+                String s="";
+                s=vista.jcb_Sucursal.getSelectedItem().toString();
+                if(s=="Sucursal 1"){
+                    sucursal=1;
+                }
+                else if(s=="Sucursal 2"){
+                    sucursal=2;
+                }
+                else if(s=="Sucursal 3"){
+                    sucursal=3;
+                }
                 if(modelo.InsertarLibro(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), 
                     vista.jcb_Genero.getSelectedItem().toString(), vista.txt_Autor.getText(), 
                     vista.txt_Editorial.getText(), vista.jsp_Paginas.getValue().toString())){
-                    if(modelo.InsertarInventario(vista.txt_ISBN.getText(), 
-                        Integer.parseInt(vista.jcb_Genero.getSelectedItem().toString()), 
-                        Integer.parseInt(vista.jsp_Existencia.getValue().toString()))){   
+                if(modelo.InsertarInventario(vista.txt_ISBN.getText(), sucursal, 
+                    Integer.parseInt(vista.jsp_Existencia.getValue().toString()))){
                 JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
                 Limpiar();
                 }
@@ -98,6 +120,16 @@ public class controlLibro implements ActionListener, MouseListener{
         if(vista.btn_Cancelar == evento.getSource()){
             Limpiar();
             desabilitar();
+            menu vistaMenu = new menu();
+            controladorMenu control = new controladorMenu(vistaMenu, frame);
+            new CambiaPanel(frame.pnl_cambiante,vistaMenu);
+            control.iniciarVista();
+        }
+        
+        if(vista.btn_Inventario == evento.getSource()){
+            modeloLibro2 modelo = new modeloLibro2(); 
+            controlLibro2 con = new controlLibro2(modelo, vista2); 
+            con.iniciarVista(); 
         }
     }
 

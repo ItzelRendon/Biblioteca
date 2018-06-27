@@ -9,19 +9,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.modeloCliente;
 import modelo.modeloEmpleado;
-<<<<<<< HEAD
 import modelo.modeloLibro;
-import vista.Empleado;
-import vista.Frame;
-import vista.Libro;
-import vista.Libro;
-=======
 import modelo.modeloRenta;
 import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
+import vista.Libro;
+import vista.Libro2;
 import vista.Renta;
->>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
 import vista.menu;
 
 /**
@@ -38,12 +33,9 @@ public class controladorMenu implements ActionListener{
         this.vista = vista;
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
-<<<<<<< HEAD
-        this.vista.btnLibro.addActionListener(this);
-=======
         this.vista.btnRenta.addActionListener(this);
         this.vista.btnCliente.addActionListener(this);
->>>>>>> 5de0bf7d749476743d75017eb394cca5bf4a3f4d
+        this.vista.btnLibro.addActionListener(this);
     }
    
     public void iniciarVista()
@@ -90,14 +82,15 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
-            Libro vistaLibro = new Libro();
+            Libro2 vistaLibro2 = new Libro2();
+            Libro vistaLibro = new Libro(); 
             modeloLibro modeloLibro = new modeloLibro();
-            controlLibro controlLibro = new controlLibro(modeloLibro, vistaLibro, frame);
+            controlLibro controlLibro = new controlLibro(modeloLibro, vistaLibro, frame, vistaLibro2);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaLibro);
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
-            //Y lo muestra.
+             //Y lo muestra.
             controlLibro.iniciarVista();
         }
     }   
