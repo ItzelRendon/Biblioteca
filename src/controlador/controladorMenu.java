@@ -10,10 +10,6 @@ import java.awt.event.ActionListener;
 import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
-<<<<<<< HEAD
-=======
-import vista.Libro;
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
 import modelo.modeloRenta;
 import vista.Cliente;
 import vista.Empleado;
@@ -38,17 +34,10 @@ public class controladorMenu implements ActionListener{
         this.vista = vista;
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
-<<<<<<< HEAD
-=======
         this.vista.btnLibro.addActionListener(this);
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
         this.vista.btnRenta.addActionListener(this);
         this.empleado=empleado;
         this.vista.btnCliente.addActionListener(this);
-<<<<<<< HEAD
-        this.vista.btnLibro.addActionListener(this);
-=======
->>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
     }
    
     public void iniciarVista()
@@ -102,7 +91,7 @@ public class controladorMenu implements ActionListener{
             Libro2 vistaLibro2 = new Libro2();
             Libro vistaLibro = new Libro(); 
             modeloLibro modeloLibro = new modeloLibro();
-            controlLibro controlLibro = new controlLibro(modeloLibro, vistaLibro, frame, vistaLibro2);
+            controlLibro controlLibro = new controlLibro(modeloLibro, vistaLibro, frame, vistaLibro2, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaLibro);
             frame.pnl_cambiante.revalidate();
