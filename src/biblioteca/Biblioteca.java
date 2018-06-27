@@ -5,9 +5,12 @@
  */
 package biblioteca;
 
+
+import controlador.controlelegirsucursal;
 import controlador.controllogin;
 import modelo.modelologin;
 import vista.Login;
+import vista.elegirsucursal;
 
 /**
  *
@@ -19,9 +22,8 @@ public class Biblioteca {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          Login lo = new Login();
-          modelo.modelologin mode = new modelologin();
-          controllogin control = new controllogin(mode,lo);
-          control.iniciarvista();
+            elegirsucursal vistasu = new elegirsucursal();
+            controlelegirsucursal cs = new controlelegirsucursal(vistasu);
+            cs.iniciarVista();
     }   
 }

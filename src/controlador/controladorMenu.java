@@ -32,11 +32,10 @@ public class controladorMenu implements ActionListener{
     private menu vista;
     private Frame frame;
     private String [] empleado;
-   
     public controladorMenu(menu vista, Frame frame, String [] empleado)
     {
         this.vista = vista;
-        this.frame = frame;
+        this.frame = frame; 
         this.vista.btnEmpleado.addActionListener(this);
         this.vista.btnLibro.addActionListener(this);
         this.vista.btnRenta.addActionListener(this);

@@ -51,8 +51,6 @@ public class Empleado extends javax.swing.JPanel {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel32 = new javax.swing.JLabel();
         cbbPuesto1 = new javax.swing.JComboBox<>();
-        jLabel33 = new javax.swing.JLabel();
-        cbbSucursal1 = new javax.swing.JComboBox<>();
         btnGuardar1 = new javax.swing.JButton();
         btnCancelar1 = new javax.swing.JButton();
 
@@ -139,11 +137,6 @@ public class Empleado extends javax.swing.JPanel {
         cbbPuesto1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         cbbPuesto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Bibliotecaria", "Catalogador", "Asistente", "Director" }));
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel33.setText("Sucursal");
-
-        cbbSucursal1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-
         btnGuardar1.setBackground(new java.awt.Color(255, 235, 59));
         btnGuardar1.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         btnGuardar1.setText("Guardar");
@@ -169,10 +162,7 @@ public class Empleado extends javax.swing.JPanel {
                                 .addComponent(jLabel32)
                                 .addGap(34, 34, 34)
                                 .addComponent(cbbPuesto1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbbSucursal1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(152, 252, Short.MAX_VALUE))
                             .addComponent(jSeparator5)
                             .addComponent(txtDomicilio1))
                         .addContainerGap())
@@ -226,9 +216,7 @@ public class Empleado extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbPuesto1)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbSucursal1))
+                    .addComponent(cbbPuesto1))
                 .addGap(13, 13, 13)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -319,7 +307,6 @@ public class Empleado extends javax.swing.JPanel {
     public javax.swing.JButton btnCancelar1;
     public javax.swing.JButton btnGuardar1;
     public javax.swing.JComboBox<String> cbbPuesto1;
-    public javax.swing.JComboBox<String> cbbSucursal1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -328,7 +315,6 @@ public class Empleado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
