@@ -22,12 +22,14 @@ public class controlEmpleado implements ActionListener{
     private modeloEmpleado modelo;
     private Empleado vista;
     private Frame frame;
+    private String [] empleado;
     
-    public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame)
+    public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame, String [] empleado)
     {
         this.modelo = modelo;
         this.vista = vista;
         this.frame = frame;
+        this.empleado = empleado;
         this.vista.btnCancelar1.addActionListener(this);
         this.vista.btnGuardar1.addActionListener(this);
         
@@ -62,14 +64,28 @@ public class controlEmpleado implements ActionListener{
                 String sucursal = String.valueOf(vista.cbbSucursal1.getSelectedItem());
                 int idSucursal = modelo.agarrarSucursal(sucursal);
               
-                modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal);
+                if(modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal))
+                {
+                    vista.txtNombre1.setText("");
+                    vista.txtCorreo1.setText("");
+                    vista.txtDomicilio1.setText("");
+                    vista.txtRFC1.setText("");
+                    vista.txtTelefono1.setText("");
+                    vista.cbbPuesto1.setSelectedIndex(0);
+                    vista.cbbSucursal1.setSelectedIndex(0);
+                }
                 
             }
         }
         if(vista.btnCancelar1 == e.getSource())
         {
             menu vistaMenu = new menu();
-            controladorMenu control = new controladorMenu(vistaMenu, frame);
+
+            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
+            //Lo añade al panel
+            frame.pnl_cambiante.add(vistaMenu);
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
             
             //cambio de panel
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaMenu);

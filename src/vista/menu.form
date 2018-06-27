@@ -186,18 +186,26 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="btnCliente" min="-2" pref="185" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+=======
+                      <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnLibro" min="-2" pref="185" max="-2" attributes="0"/>
                           <Component id="btnInventario" min="-2" pref="185" max="-2" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+=======
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnSucursal" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEmpleado" min="-2" max="-2" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -206,6 +214,11 @@
                           <Component id="btnRenta" min="-2" pref="185" max="-2" attributes="0"/>
                           <EmptySpace pref="377" max="32767" attributes="0"/>
                       </Group>
+=======
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnEmpleado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
                   </Group>
               </Group>
             </DimensionLayout>

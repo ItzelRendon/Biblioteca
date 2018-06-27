@@ -12,8 +12,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 /**
  *
@@ -50,6 +48,7 @@ public class modelologin {
             {
                 ca = sql.getString("tipo");
             }
+            
             if(ca.equals("empleado"))
             {
                 bandera = 1;
@@ -60,10 +59,49 @@ public class modelologin {
             }
            conexion.cerrarConexion(con);
         }
-        catch (SQLException ex)
-        {
+         catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+<<<<<<< HEAD
         }
          return bandera;
     }
+=======
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+         return bandera;
+    }
+    
+        //En esta funcion se usua para obtener informacion del usuario
+    public String[] jalarIdEmpleado(String usu, String contra)
+    {
+        ResultSet sql;       
+         try {
+            Connection con = conexion.abrirConexion();
+            Statement s = con.createStatement();
+            sql = s.executeQuery("SELECT empleado.nombre, empleado.apellidos, login.empleado_idEmpleado FROM login INNER JOIN empleado ON empleado.idEmpleado = login.empleado_idEmpleado WHERE usuario='" + usu + "' && contraseña='" + contra + "' ");
+            String [] a = new String [3];
+            int i=0;
+            while(sql.next())
+            {
+                //Aqui se guarda el resultado de la consulta en un array
+                a[0]= sql.getString(1);
+                a[1]= sql.getString(2);
+                a[2]= sql.getString(3);
+            }
+           conexion.cerrarConexion(con);
+           return a;
+        }
+        catch (SQLException ex)
+        {
+            return null;
+        }
+         catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+            return null;
+        }
+    }
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
 }

@@ -14,6 +14,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelo.modeloRenta;
@@ -29,13 +31,14 @@ public class controlRenta implements ActionListener, KeyListener{
     private modelo.modeloRenta modelo;
     private vista.Renta vista;
     private Frame frame;
-    
+    private String [] empleado;
     DefaultListModel listModel;
-
-    public controlRenta(modeloRenta modelo, Renta vista, Frame frame) {
+               
+    public controlRenta(modeloRenta modelo, Renta vista, Frame frame, String [] empleado) {
         this.modelo = modelo;
         this.vista = vista;
         this.frame = frame;
+        this.empleado = empleado;
         
         this.vista.btnAgrLibro.addActionListener(this);
         this.vista.btnAgrRenta.addActionListener(this);
@@ -52,31 +55,12 @@ public class controlRenta implements ActionListener, KeyListener{
 
     public void iniciarRenta(){
         vista.setVisible(true);  
-        lipiarCajas();
-        
-    }
-        
-    public void lipiarCajas(){
-        this.vista.lblFechaD.setText("");
-        this.vista.lblFechaE.setText("");
-        
-        this.vista.txtIDCliente.setText("");
-        this.vista.txtISBN.setText("");
-        this.vista.txtNombreC.setText("");
-        this.vista.txtNombreL.setText("");
-        
-        //Limpia la lista
-        listModel.clear();
-       
-        //Limpiar el spinner
-        this.vista.spnCant.setValue(0);
-        
         //Fecha
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String fD = dateFormat.format(date);
         vista.lblFechaE.setText(fD);
-        
+                
         //Sumarle
         Calendar c = Calendar.getInstance();
         try {
@@ -87,6 +71,37 @@ public class controlRenta implements ActionListener, KeyListener{
         c.add(Calendar.DATE, 5);  // number of days to add
         String fE = dateFormat.format(c.getTime());  // dt is now the new date
         vista.lblFechaD.setText(fE);
+        this.vista.lblID.setText(empleado[2]);
+        this.vista.lblNombreE.setText(empleado[0]+" "+empleado[1]);
+        //Limpia la lista
+        listModel.clear();
+        limpiarCajas();
+        
+    }
+        
+    public void limpiarCajas(){        
+        this.vista.txtIDCliente.setText("");
+        this.vista.txtISBN.setText("");
+        this.vista.txtNombreC.setText("");
+        this.vista.txtNombreL.setText("");
+       
+        //Limpiar el spinner
+        this.vista.spnCant.setValue(0);
+        
+        this.vista.txtNombreC.setEnabled(false);
+        this.vista.txtNombreL.setEnabled(false);
+    }
+    
+    public String formatoFecha(String fecha){
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        Date dates = null;
+        try {
+            dates = format.parse(fecha);
+        } catch (ParseException ex) {
+            Logger.getLogger(controlRenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(dates);
     }
     
     @Override
@@ -94,16 +109,18 @@ public class controlRenta implements ActionListener, KeyListener{
         if(e.getSource() == vista.btnCanRenta){
             String[] options = {"Limpiar Renta", "Volver al menú", "Permanecer aquí"};
             int seleccion = JOptionPane.showOptionDialog(null, "¿Estás seguro que quieres cancelar?", "¡Atención!", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-            
-            if(seleccion == 0)
-                this.lipiarCajas();
-           
+            if(seleccion == 0){
+                this.limpiarCajas();        
+                //Limpia la lista
+                listModel.clear();
+            }
+                
             if(seleccion == 1){
                 frame.pnl_cambiante.removeAll();
                 frame.pnl_cambiante.revalidate();
                 frame.pnl_cambiante.repaint();
                 menu vistaMenu = new menu();
-                controladorMenu control = new controladorMenu(vistaMenu, frame);
+                controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
                 //Lo añade al panel
                 frame.pnl_cambiante.add(vistaMenu);
                 frame.pnl_cambiante.revalidate();
@@ -114,28 +131,53 @@ public class controlRenta implements ActionListener, KeyListener{
         }
         
         if(e.getSource() == vista.btnAgrLibro){
-            
-            System.out.println("txtnombrel: "+vista.txtNombreL.getText());
+            //Cantidad a rentar
             int spn = (int) vista.spnCant.getValue();
+            //si el nombre esta vacio o es in incorrecto o no se ha agregado cantidad a rentar
             if(vista.txtNombreL.getText().equals("") || vista.txtNombreL.getText().equals("ID Incorrecto") || spn == 0){
                     JOptionPane.showMessageDialog(null, "Introduce datos válidos");
             }
             else{
-                listModel.addElement(vista.txtNombreL.getText() + "-" + vista.spnCant.getValue());
-                
+                //consulta el libro
+                String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),"1");
+                //Si hay menos libros de los que se ingresa
+                if(Integer.parseInt(b[1]) < spn){
+                    JOptionPane.showMessageDialog(null, "Cantidad incorrecta");
+                    this.vista.spnCant.setValue(0);
+                }
+                //Si no hay en existencia marca error
+                else if(Integer.parseInt(b[1])==0){
+                    JOptionPane.showMessageDialog(null, "No hay en existencias");
+                    this.vista.txtISBN.setText("");
+                    this.vista.txtNombreL.setText("");    
+                    this.vista.spnCant.setValue(0);
+                }
+                //Si hay en existencia lo agrega a la lista
+                else if(Integer.parseInt(b[1])!=0){
+                    listModel.addElement(vista.txtISBN.getText()+"-"+vista.txtNombreL.getText() + "-" + vista.spnCant.getValue());
+                }
             }
                 
         }
         
-        if(vista.btnAgrRenta == e.getSource()){
-            String[] libros = new String[vista.listLibros.getModel().getSize()];
-            for (int i = 0; i < vista.listLibros.getModel().getSize(); i++) {
-                 libros[i] = String.valueOf(vista.listLibros.getModel().getElementAt(i));
-            }
-            
-            if(!vista.txtIDCliente.equals("") && libros.length != 0){
-                //Guardar aquí
-                JOptionPane.showMessageDialog(null, "Éxito");   
+        if(vista.btnAgrRenta == e.getSource()){            
+            if(!vista.txtIDCliente.equals("") && listModel.getSize() != 0){
+                String [][] librosR = new String[listModel.getSize()][3];
+                for(int i = 0; i< listModel.getSize();i++){
+                    String lista = (String) listModel.getElementAt(i);
+                    String[] parts = lista.split("-");
+                    librosR[i][0] = parts[0];
+                    librosR[i][1] = parts[1];
+                    librosR[i][2] = parts[2];
+                }
+                if(modelo.insertarRenta(librosR, formatoFecha(vista.lblFechaE.getText()), formatoFecha(vista.lblFechaD.getText()), vista.txtIDCliente.getText(), vista.lblID.getText()))
+                {
+                    JOptionPane.showMessageDialog(null, "Éxito");   
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Error");   
+                }
+                
             }
             else
             {
@@ -151,13 +193,17 @@ public class controlRenta implements ActionListener, KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {        
         if(e.getSource() == vista.txtISBN){
+            //al dar enter en el isbn
             if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                //cuando hay algo en el isbn
                 if(!vista.txtISBN.getText().equals("")){
-                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText());
+    //Agregar id de la sucursal
+                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),"1");
                     if(b[0] == null)
                         vista.txtNombreL.setText("ID Incorrecto");
-                    else
+                    else{
                         vista.txtNombreL.setText(b[0]);
+                    }     
                 } 
                 else {
                     vista.txtNombreL.setText("Ingrese ID");

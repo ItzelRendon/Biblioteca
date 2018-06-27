@@ -23,11 +23,14 @@ public class controlCliente implements ActionListener{
     private modeloCliente modelo; 
     private Cliente vista;
     private Frame frame;
-    public controlCliente(modeloCliente modelo, Cliente vista, Frame frame)// COntructor de parametros para poder manipular lo que hay en la vista Cliente
+    private String [] empleado;
+    
+    public controlCliente(modeloCliente modelo, Cliente vista, Frame frame, String [] empleado)// COntructor de parametros para poder manipular lo que hay en la vista Cliente
     {
         this.modelo= modelo; 
         this.vista= vista;  
         this.frame= frame; 
+        this.empleado = empleado;
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
         this.vista.btnRegresar.addActionListener(this);
@@ -99,7 +102,7 @@ public class controlCliente implements ActionListener{
         else if(vista.btnRegresar == ae.getSource())
         {
             menu vistaMenu = new menu();
-            controladorMenu control = new controladorMenu(vistaMenu, frame);
+            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
             new CambiaPanel(frame.pnl_cambiante,vistaMenu);
             control.iniciarVista();
         }

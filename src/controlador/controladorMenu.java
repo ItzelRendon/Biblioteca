@@ -10,6 +10,10 @@ import java.awt.event.ActionListener;
 import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
+<<<<<<< HEAD
+=======
+import vista.Libro;
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
 import modelo.modeloRenta;
 import vista.Cliente;
 import vista.Empleado;
@@ -27,15 +31,24 @@ public class controladorMenu implements ActionListener{
 
     private menu vista;
     private Frame frame;
+    private String [] empleado;
    
-    public controladorMenu(menu vista, Frame frame)
+    public controladorMenu(menu vista, Frame frame, String [] empleado)
     {
         this.vista = vista;
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
-        this.vista.btnRenta.addActionListener(this);
-        this.vista.btnCliente.addActionListener(this);
+<<<<<<< HEAD
+=======
         this.vista.btnLibro.addActionListener(this);
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
+        this.vista.btnRenta.addActionListener(this);
+        this.empleado=empleado;
+        this.vista.btnCliente.addActionListener(this);
+<<<<<<< HEAD
+        this.vista.btnLibro.addActionListener(this);
+=======
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
     }
    
     public void iniciarVista()
@@ -50,7 +63,11 @@ public class controladorMenu implements ActionListener{
             
             Empleado vistaEmpleado = new Empleado();
             modeloEmpleado modeloEmpleado = new modeloEmpleado();
-            controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame);
+            controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame, empleado);
+            //Lo añade al panel
+            frame.pnl_cambiante.add(vistaEmpleado);
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
             //cambio de panel
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaEmpleado);
             //Y lo muestra.
@@ -62,7 +79,7 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
             modeloRenta modeloRenta = new modeloRenta();
             Renta vistaRenta = new Renta();
-            controlRenta controlRenta = new controlRenta(modeloRenta, vistaRenta, frame);
+            controlRenta controlRenta = new controlRenta(modeloRenta, vistaRenta, frame, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaRenta);
             frame.pnl_cambiante.revalidate();
@@ -73,7 +90,7 @@ public class controladorMenu implements ActionListener{
         else if(vista.btnCliente == e.getSource()){
             Cliente v = new Cliente();
             modeloCliente m = new modeloCliente();
-            controlCliente con = new controlCliente(m, v, frame);
+            controlCliente con = new controlCliente(m, v, frame, empleado);
             new CambiaPanel(frame.pnl_cambiante,v); 
             con.iniciarVista();
         }

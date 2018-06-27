@@ -5,6 +5,11 @@
  */
 package controlador;
 
+<<<<<<< HEAD
+=======
+import modelo.modeloCliente;
+import vista.Cliente;
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
 import vista.Frame;
 import vista.menu;
 
@@ -15,10 +20,12 @@ import vista.menu;
 public class controlFrame {
     
     private Frame vista;
+    private String [] empleado;
 
-    public controlFrame(Frame vista)
+    public controlFrame(Frame vista, String [] empleado)
     {
         this.vista=vista;
+        this.empleado=empleado;
     }
     
     public void iniciar()
@@ -29,13 +36,44 @@ public class controlFrame {
         this.vista.pnl_cambiante.removeAll();
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
+<<<<<<< HEAD
         menu vistaMenu = new menu();
         controladorMenu control = new controladorMenu(vistaMenu, vista);
         //cambio de panel
         CambiaPanel cp = new CambiaPanel(vista.pnl_cambiante, vistaMenu);
         //hacer scroll más rapido
          vista.scroll.getVerticalScrollBar().setUnitIncrement(16);
+=======
+        //Crea objetos del siguiente panel
+        menu vistaMenu = new menu();
+        controladorMenu control = new controladorMenu(vistaMenu, vista, empleado);
+        //Lo añade al panel
+        this.vista.pnl_cambiante.add(vistaMenu);
+        this.vista.pnl_cambiante.revalidate();
+        this.vista.pnl_cambiante.repaint();
+>>>>>>> 1462af6187ad78e45e886a275eec6c2bbbc287d1
         //Y lo muestra.
         control.iniciarVista();
     }
+    
+    public void iniciarVista()
+    {
+        this.vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
+        Cliente c= new Cliente(); 
+        modeloCliente m= new modeloCliente(); 
+        controlCliente co= new controlCliente(m, c, vista, empleado); 
+        new CambiaPanel(this.vista.pnl_cambiante,c);
+        co.iniciarVista();
+    }
+
+//        controladorMenu control = new controladorMenu(vistaMenu, vista);
+//        //cambio de panel
+//        CambiaPanel cp = new CambiaPanel(vista.pnl_cambiante, vistaMenu);
+//        //hacer scroll más rapido
+//         vista.scroll.getVerticalScrollBar().setUnitIncrement(16);
+//        //Y lo muestra.
+//        control.iniciarVista();
+//    }
+
 }
