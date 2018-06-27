@@ -6,14 +6,8 @@
 package controlador;
 
 import modelo.modeloCliente;
-import modelo.modeloEmpleado;
-import modelo.modeloInventario;
-import modelo.modeloLibro;
 import vista.Cliente;
-import vista.Empleado;
 import vista.Frame;
-import vista.Inventario;
-import vista.Libro;
 import vista.menu;
 
 /**
@@ -56,8 +50,18 @@ public class controlFrame {
         vista.setLocationRelativeTo(null);
         Cliente c= new Cliente(); 
         modeloCliente m= new modeloCliente(); 
-        controlCliente co= new controlCliente(m,c); 
+        controlCliente co= new controlCliente(m, c, vista, empleado); 
         new CambiaPanel(this.vista.pnl_cambiante,c);
         co.iniciarVista();
     }
+
+//        controladorMenu control = new controladorMenu(vistaMenu, vista);
+//        //cambio de panel
+//        CambiaPanel cp = new CambiaPanel(vista.pnl_cambiante, vistaMenu);
+//        //hacer scroll más rapido
+//         vista.scroll.getVerticalScrollBar().setUnitIncrement(16);
+//        //Y lo muestra.
+//        control.iniciarVista();
+//    }
+
 }

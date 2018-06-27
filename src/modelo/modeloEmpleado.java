@@ -87,7 +87,7 @@ public class modeloEmpleado {
             String [] a = new String [filas];
             //contador para copiar del resultset al array
             int i = 0;
-            //copiar del resultset al array
+            //copiar del resultset al arraya
             while (rs.next())
             {
                 a[i] = rs.getString(1);

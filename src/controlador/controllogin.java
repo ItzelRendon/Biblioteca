@@ -42,7 +42,7 @@ public class controllogin implements ActionListener
     
     @Override
     public void actionPerformed(ActionEvent e)
-    {
+    {       
         String usu = vista.textonombre.getText();
         String contra = new String(vista.textocontraseña.getPassword());
         
@@ -62,6 +62,12 @@ public class controllogin implements ActionListener
                 default:
                     break;
             }
+
         }
+
+          // if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))  
+       
+
     }
 }
+

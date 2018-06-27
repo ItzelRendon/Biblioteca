@@ -24,13 +24,26 @@ public class modelologin {
     
     public int ingresar(String usu, String contra)
     {
-        ResultSet sql; 
+        String capturar="";
+        int control=0;
+        ResultSet sql;       
         String ca ="";
         int bandera=0;
          try {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
             sql = s.executeQuery("SELECT * FROM login WHERE usuario='" + usu + "' && contraseña='" + contra + "' ");
+            while(sql.next())
+            {
+                capturar = sql.getString("usuario");
+            }
+            if(capturar.equals(usu))
+            {
+                control = 4;
+            }
+            if((!capturar.equals(usu)))
+            {
+                control = 2;
 //            while(sql.next())
 //            {
 //                nombre = sql.getString("usuario");
@@ -58,10 +71,7 @@ public class modelologin {
                 bandera = 2;
             }
            conexion.cerrarConexion(con);
-        }
-         catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
-            
+        }            
         } catch (SQLException ex) {
             Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
             

@@ -64,21 +64,31 @@ public class controlEmpleado implements ActionListener{
                 String sucursal = String.valueOf(vista.cbbSucursal1.getSelectedItem());
                 int idSucursal = modelo.agarrarSucursal(sucursal);
               
-                modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal);
+                if(modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal))
+                {
+                    vista.txtNombre1.setText("");
+                    vista.txtCorreo1.setText("");
+                    vista.txtDomicilio1.setText("");
+                    vista.txtRFC1.setText("");
+                    vista.txtTelefono1.setText("");
+                    vista.cbbPuesto1.setSelectedIndex(0);
+                    vista.cbbSucursal1.setSelectedIndex(0);
+                }
                 
             }
         }
         if(vista.btnCancelar1 == e.getSource())
         {
-            frame.pnl_cambiante.removeAll();
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
             menu vistaMenu = new menu();
+
             controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaMenu);
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
+            
+            //cambio de panel
+            CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaMenu);
             //Y lo muestra.
             control.iniciarVista();
         }
