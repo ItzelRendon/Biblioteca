@@ -22,13 +22,15 @@ public class controladorMenu implements ActionListener{
 
     private menu vista;
     private Frame frame;
+    private String [] empleado;
    
-    public controladorMenu(menu vista, Frame frame)
+    public controladorMenu(menu vista, Frame frame, String [] empleado)
     {
         this.vista = vista;
         this.frame = frame;
         this.vista.btnEmpleado.addActionListener(this);
         this.vista.btnRenta.addActionListener(this);
+        this.empleado=empleado;
     }
    
     public void iniciarVista()
@@ -45,7 +47,7 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
             Empleado vistaEmpleado = new Empleado();
             modeloEmpleado modeloEmpleado = new modeloEmpleado();
-            controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame);
+            controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaEmpleado);
             frame.pnl_cambiante.revalidate();
@@ -59,7 +61,7 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
             modeloRenta modeloRenta = new modeloRenta();
             Renta vistaRenta = new Renta();
-            controlRenta controlRenta = new controlRenta(modeloRenta, vistaRenta, frame);
+            controlRenta controlRenta = new controlRenta(modeloRenta, vistaRenta, frame, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaRenta);
             frame.pnl_cambiante.revalidate();

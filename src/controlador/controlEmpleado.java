@@ -22,12 +22,14 @@ public class controlEmpleado implements ActionListener{
     private modeloEmpleado modelo;
     private Empleado vista;
     private Frame frame;
+    private String [] empleado;
     
-    public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame)
+    public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame, String [] empleado)
     {
         this.modelo = modelo;
         this.vista = vista;
         this.frame = frame;
+        this.empleado = empleado;
         this.vista.btnCancelar1.addActionListener(this);
         this.vista.btnGuardar1.addActionListener(this);
         
@@ -72,7 +74,7 @@ public class controlEmpleado implements ActionListener{
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
             menu vistaMenu = new menu();
-            controladorMenu control = new controladorMenu(vistaMenu, frame);
+            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
             //Lo añade al panel
             frame.pnl_cambiante.add(vistaMenu);
             frame.pnl_cambiante.revalidate();

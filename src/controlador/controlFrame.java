@@ -23,10 +23,12 @@ import vista.menu;
 public class controlFrame {
     
     private Frame vista;
+    private String [] empleado;
 
-    public controlFrame(Frame vista)
+    public controlFrame(Frame vista, String [] empleado)
     {
         this.vista=vista;
+        this.empleado=empleado;
     }
     
     public void iniciar()
@@ -38,14 +40,8 @@ public class controlFrame {
         this.vista.pnl_cambiante.revalidate();
         this.vista.pnl_cambiante.repaint();
         //Crea objetos del siguiente panel
-//        Empleado vistaemp = new Empleado();
-//        modeloEmpleado modeloemp = new modeloEmpleado();
-//        controlEmpleado controlemp = new controlEmpleado(modeloemp, vistaemp);
-          Inventario vistaemp = new Inventario();
-          modeloInventario modeloemp = new modeloInventario();
-          controlInventario controlemp = new controlInventario(modeloemp, vistaemp);
         menu vistaMenu = new menu();
-        controladorMenu control = new controladorMenu(vistaMenu, vista);
+        controladorMenu control = new controladorMenu(vistaMenu, vista, empleado);
         //Lo añade al panel
         this.vista.pnl_cambiante.add(vistaMenu);
         this.vista.pnl_cambiante.revalidate();
@@ -53,6 +49,7 @@ public class controlFrame {
         //Y lo muestra.
         control.iniciarVista();
     }
+    
     public void iniciarVista()
     {
         this.vista.setVisible(true);
