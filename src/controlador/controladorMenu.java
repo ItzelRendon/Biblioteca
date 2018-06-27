@@ -7,16 +7,20 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import modelo.modeloCliente;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
 import modelo.modeloRenta;
+import modelo.modelosucursal;
 import vista.Cliente;
 import vista.Empleado;
 import vista.Frame;
 import vista.Libro;
 import vista.Libro2;
+import vista.Login;
 import vista.Renta;
+import vista.Sucursal;
 import vista.menu;
 
 /**
@@ -38,6 +42,8 @@ public class controladorMenu implements ActionListener{
         this.vista.btnRenta.addActionListener(this);
         this.empleado=empleado;
         this.vista.btnCliente.addActionListener(this);
+        this.vista.btnSalir.addActionListener(this);
+        this.vista.btnSucursal.addActionListener(this);
     }
    
     public void iniciarVista()
@@ -76,7 +82,7 @@ public class controladorMenu implements ActionListener{
              //Y lo muestra.
             controlRenta.iniciarRenta();
         }
-        else if(vista.btnCliente == e.getSource()){
+        if(vista.btnCliente == e.getSource()){
             Cliente v = new Cliente();
             modeloCliente m = new modeloCliente();
             controlCliente con = new controlCliente(m, v, frame, empleado);
@@ -98,6 +104,29 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
              //Y lo muestra.
             controlLibro.iniciarVista();
+        }
+        if(vista.btnSucursal == e.getSource()){
+            frame.pnl_cambiante.removeAll();
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+            Sucursal v = new Sucursal();
+            modelosucursal m = new modelosucursal();
+            controlsucursal con = new controlsucursal(v, m, frame, empleado);
+            //Lo añade al panel
+            frame.pnl_cambiante.add(v);
+            frame.pnl_cambiante.revalidate();
+            frame.pnl_cambiante.repaint();
+             //Y lo muestra.
+            con.iniciarVista();
+        }
+        if(vista.btnSalir == e.getSource())
+        {
+            if (JOptionPane.showConfirmDialog(vista,
+                    "¿Estás seguro que deseas salir?", "Fleetock",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                    frame.setVisible(false);
+            }
         }
     }   
 }

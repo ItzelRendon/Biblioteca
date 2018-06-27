@@ -115,7 +115,6 @@ public class menu extends javax.swing.JPanel {
             }
         });
 
-
         btnLibro.setBackground(new java.awt.Color(255, 255, 255));
         btnLibro.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
         btnLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/libro.png"))); // NOI18N
@@ -159,6 +158,11 @@ public class menu extends javax.swing.JPanel {
         btnSucursal.setFocusPainted(false);
         btnSucursal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSucursal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSucursalActionPerformed(evt);
+            }
+        });
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
@@ -172,6 +176,11 @@ public class menu extends javax.swing.JPanel {
         btnSalir.setFocusPainted(false);
         btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,6 +263,14 @@ public class menu extends javax.swing.JPanel {
     private void btnRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRentaActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSucursalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSucursalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

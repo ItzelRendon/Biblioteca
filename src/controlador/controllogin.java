@@ -54,6 +54,7 @@ public class controllogin implements ActionListener
                     JOptionPane.showMessageDialog(null, "Bienvenido");
                     Frame frame = new Frame();
                     controlFrame controlFrame = new controlFrame(frame, modelo.jalarIdEmpleado(usu, contra));
+                    vista.setVisible(false);
                     controlFrame.iniciar();
                     break;
                 case 2:
@@ -62,16 +63,5 @@ public class controllogin implements ActionListener
                 default:
                     break;
             }
-
     }
 }}
-
-
-        
-
-          // if(vista.botonentrar == e.getSource() || modelo.ingresar(vista.textonombre, vista.textocontraseña))  
-       
-
-    
-
-
