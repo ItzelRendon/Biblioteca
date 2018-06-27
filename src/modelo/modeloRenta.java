@@ -9,8 +9,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,8 +35,7 @@ public class modeloRenta {
              a[1] = rs.getString(2);
             }
             //cerrar conexión
-            conexion.cerrarConexion(con); 
-//            
+            conexion.cerrarConexion(con);         
             return a; 
         }
         catch(SQLException e)
@@ -84,15 +81,15 @@ public class modeloRenta {
             Statement s = con.createStatement();
             //Inserta un registro en la tabla Viaje.
             int idRenta = ultimaRenta();
-            
+            System.out.println(""+idRenta);
             int registroRenta = s.executeUpdate(
                  "INSERT INTO `renta`(`fechaRenta`, `fechaDefinida`, "
                          + "`cliente_idCliente`, `empleado_idEmpleado`) VALUES "
                          + "('"+frenta+"','"+fdefinida+"',"+idCliente+","+idEmpleado+")");
                         
-
+            
             //Inserta un registro en la tabla detalleRenta.
-            for(int i=1; i<libros.length; i++){
+            for(int i=0; i<libros.length; i++){
                 System.out.println("i2:"+i);
                 int registroDetalleRenta = s.executeUpdate(
                         "INSERT INTO `detallerenta`(`renta_idRenta`, "

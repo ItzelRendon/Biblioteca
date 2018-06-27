@@ -109,7 +109,6 @@ public class controlRenta implements ActionListener, KeyListener{
         if(e.getSource() == vista.btnCanRenta){
             String[] options = {"Limpiar Renta", "Volver al menú", "Permanecer aquí"};
             int seleccion = JOptionPane.showOptionDialog(null, "¿Estás seguro que quieres cancelar?", "¡Atención!", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-            
             if(seleccion == 0){
                 this.limpiarCajas();        
                 //Limpia la lista
