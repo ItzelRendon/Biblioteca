@@ -63,8 +63,6 @@ public class controlRenta implements ActionListener, KeyListener{
                
         this.vista.lblID.setText(empleado[2]);
         this.vista.lblNombreE.setText(empleado[0]+" "+empleado[1]);
-        //Limpia la lista
-        listModel.clear();
         limpiarCajas();
         
     }
@@ -80,6 +78,8 @@ public class controlRenta implements ActionListener, KeyListener{
         
         this.vista.txtNombreC.setEnabled(false);
         this.vista.txtNombreL.setEnabled(false);
+        //Limpia la lista
+        listModel.clear();
     }
     
     public String formatoFecha(String fecha){
@@ -101,8 +101,6 @@ public class controlRenta implements ActionListener, KeyListener{
             int seleccion = JOptionPane.showOptionDialog(null, "¿Estás seguro que quieres cancelar?", "¡Atención!", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if(seleccion == 0){
                 this.limpiarCajas();        
-                //Limpia la lista
-                listModel.clear();
             }
                 
             if(seleccion == 1){
@@ -161,9 +159,10 @@ public class controlRenta implements ActionListener, KeyListener{
                     librosR[i][2] = parts[2];
                 }
       //SUCURSAL          
-                if(modelo.insertarRenta(librosR, formatoFecha(vista.lblFechaE.getText()), vista.txtIDCliente.getText(), vista.lblID.getText(), "1"))
+                if(modelo.insertarRenta(librosR, formatoFecha(vista.lblFechaE.getText()), vista.txtIDCliente.getText(), vista.lblID.getText(), empleado[3]))
                 {
-                    JOptionPane.showMessageDialog(null, "Éxito");   
+                    JOptionPane.showMessageDialog(null, "Se ha realizado su renta con éxito");   
+                    limpiarCajas();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Error");   
@@ -189,7 +188,7 @@ public class controlRenta implements ActionListener, KeyListener{
                 //cuando hay algo en el isbn
                 if(!vista.txtISBN.getText().equals("")){
     //SUCURSAL
-                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),"1");
+                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),empleado[3]);
                     if(b[0] == null)
                         vista.txtNombreL.setText("ID Incorrecto");
                     else{

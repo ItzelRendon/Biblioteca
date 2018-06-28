@@ -81,7 +81,6 @@ public class modeloRenta {
             Statement s = con.createStatement();
             //Inserta un registro en la tabla Viaje.
             int idRenta = ultimaRenta();
-            System.out.println(""+idRenta);
             int registroRenta = s.executeUpdate(
                  "INSERT INTO `renta`(`fechaRenta`, "
                          + "`cliente_idCliente`, `empleado_idEmpleado`) VALUES "
@@ -89,7 +88,6 @@ public class modeloRenta {
                        
             //Inserta un registro en la tabla detalleRenta.
             for(int i=0; i<libros.length; i++){
-                System.out.println("i2:"+i);
                 int registroDetalleRenta = s.executeUpdate(
                         "INSERT INTO `detallerenta`(`renta_idRenta`, "
                                 + "`libro_ISBN`, `cantidadLibro`) VALUES "
