@@ -20,7 +20,7 @@ public class controlelegirsucursal implements ActionListener{
     private elegirsucursal vista;
     public static String guardar="";
     public static String ip="";
-
+    public int bandera = 1;
     public static String getGuardar() {
         return guardar;
     }
@@ -29,7 +29,7 @@ public class controlelegirsucursal implements ActionListener{
         controlelegirsucursal.guardar = guardar;
     }
 
-    public static String getIp() {
+    public String getIp() {
         return ip;
     }
 
@@ -37,9 +37,10 @@ public class controlelegirsucursal implements ActionListener{
         controlelegirsucursal.ip = ip;
     }
     
-    public controlelegirsucursal(elegirsucursal vista)
+    public controlelegirsucursal(elegirsucursal vista, int bandera)
     {
         this.vista = vista;
+        this.bandera= bandera; 
         this.vista.combo.addActionListener(this);
         this.vista.botonaceptar.addActionListener(this);
     }
@@ -71,7 +72,7 @@ public class controlelegirsucursal implements ActionListener{
             }
             else if(guardar == valor2)
             {
-                ip = "localhost";
+                ip = "192.168.43.37";
             }
             else
             {
@@ -82,11 +83,16 @@ public class controlelegirsucursal implements ActionListener{
 //            vista.panel_elegir.removeAll();
 //            vista.panel_elegir.revalidate();
 //            vista.panel_elegir.repaint();
-            vista.setVisible(false);
-            Login lo = new Login();
-            modelologin mode = new modelologin();
-            controllogin control2 = new controllogin(mode,lo,ip);
-            control2.iniciarvista();
+            if (bandera != 1)
+            {  
+                vista.setVisible(false);
+                Login lo = new Login();
+                modelologin mode = new modelologin();
+                controllogin control2 = new controllogin(mode,lo,ip);
+                control2.iniciarvista();
+            }  
+            else 
+                vista.setVisible(false);
         }
     }
 }

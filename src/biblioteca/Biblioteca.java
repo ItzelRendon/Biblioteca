@@ -6,9 +6,6 @@
 package biblioteca;
 
 import controlador.controlelegirsucursal;
-import controlador.controllogin;
-import modelo.modelologin;
-import vista.Login;
 import vista.elegirsucursal;
 
 /**
@@ -22,7 +19,7 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
             elegirsucursal vistasu = new elegirsucursal();
-            controlelegirsucursal cs = new controlelegirsucursal(vistasu);
+            controlelegirsucursal cs = new controlelegirsucursal(vistasu,0);
             cs.iniciarVista();
     }   
 }

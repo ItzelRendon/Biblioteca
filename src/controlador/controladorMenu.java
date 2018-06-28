@@ -121,10 +121,10 @@ public class controladorMenu implements ActionListener{
         if(vista.btnSalir == e.getSource())
         {
             if (JOptionPane.showConfirmDialog(vista,
-                    "¿Estás seguro que deseas salir?", "Fleetock",
+                    "¿Estás seguro que deseas salir?", "Biblioteca",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
-                    frame.setVisible(false);
+                    System.exit(0);
             }
         }
     }   
