@@ -164,9 +164,6 @@ public class controlRenta implements ActionListener, KeyListener{
                     JOptionPane.showMessageDialog(null, "Se ha realizado su renta con éxito");   
                     limpiarCajas();
                 }
-                else {
-                    JOptionPane.showMessageDialog(null, "Error");   
-                }
                 
             }
             else

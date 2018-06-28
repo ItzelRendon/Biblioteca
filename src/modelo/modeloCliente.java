@@ -8,6 +8,7 @@ package modelo;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Fabiola Paez
@@ -15,7 +16,7 @@ import java.sql.Statement;
 public class modeloCliente {
      private ConexionBD conexion= new ConexionBD();
     
-    public boolean insertarCliente(String cNombre, String cApellidos, String cTelefono, String cCorreo, String cDomicilio)
+    public boolean  insertarCliente(String cNombre, String cApellidos, String cTelefono, String cCorreo, String cDomicilio)
     {   try
         {
             Connection con= conexion.abrirConexion(); 
@@ -26,7 +27,11 @@ public class modeloCliente {
         }
         catch(SQLException e)
         {
-          return false;    
+            JOptionPane.showMessageDialog(null, "Error al insertar los datos");
+            return false;    
+        }
+        catch(NullPointerException e){
+            return false;
         }
     }
 }

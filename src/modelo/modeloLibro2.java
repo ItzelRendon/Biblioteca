@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -57,7 +58,11 @@ public class modeloLibro2 {
             conexion.cerrarConexion(con);
         }
         } catch (SQLException e) {
-        return null;
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return null;
+        }
+        catch(NullPointerException e){
+            return null;
         }
     }   
 }

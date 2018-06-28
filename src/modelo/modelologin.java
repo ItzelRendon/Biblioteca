@@ -60,8 +60,7 @@ public class modelologin {
            conexion.cerrarConexion(con);
         }
         catch(NullPointerException e){
-            //JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
-
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
         } catch (SQLException ex) {
 //            Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -92,6 +91,7 @@ public class modelologin {
         }
         catch (SQLException ex)
         {
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return null;
         }
          catch(NullPointerException e){

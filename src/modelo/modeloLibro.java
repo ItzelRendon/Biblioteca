@@ -28,6 +28,10 @@ public class modeloLibro {
             return true;
             
         }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return false;
+        }
+        catch(NullPointerException e){
             return false;
         }
     }
@@ -47,6 +51,10 @@ public class modeloLibro {
             return true;
             
         }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return false;
+        }
+        catch(NullPointerException e){
             return false;
         }
     }

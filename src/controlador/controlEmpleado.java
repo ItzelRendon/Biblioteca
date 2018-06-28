@@ -60,6 +60,7 @@ public class controlEmpleado implements ActionListener{
                     vista.txtNombre1.setText("");
                     vista.txtCorreo1.setText("");
                     vista.txtDomicilio1.setText("");
+                    vista.txtApellidos1.setText("");
                     vista.txtRFC1.setText("");
                     vista.txtTelefono1.setText("");
                     vista.cbbPuesto1.setSelectedIndex(0);
