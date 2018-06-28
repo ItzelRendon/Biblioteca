@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
+import controlador.controlelegirsucursal;
 /**
  *
  * @author Holi
@@ -21,7 +21,9 @@ public class ConexionBD {
         //Para conectarnos a nuestrza base de datos
         try{
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            con = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca", "root", "");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://"+controlelegirsucursal.ip+"/biblioteca", "root", "");
+            
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "No se pudo abrir la conexión con la BD.");
             con=null;

@@ -23,7 +23,7 @@ public class controlEmpleado implements ActionListener{
     private Empleado vista;
     private Frame frame;
     private String [] empleado;
-    
+   
     public controlEmpleado(modeloEmpleado modelo, Empleado vista, Frame frame, String [] empleado)
     {
         this.modelo = modelo;
@@ -38,13 +38,6 @@ public class controlEmpleado implements ActionListener{
     public void iniciarVista()
     {
         vista.setVisible(true);
-        vista.cbbSucursal1.removeAllItems();
-        String [] sucursal = modelo.Sucursal();
-        int l = sucursal.length;
-        for(int i=0; i<l; i++)
-        {
-            vista.cbbSucursal1.addItem(sucursal[i]);
-        }
     }
 
     @Override
@@ -61,10 +54,8 @@ public class controlEmpleado implements ActionListener{
             else
             {
                 String puesto = String.valueOf(vista.cbbPuesto1.getSelectedItem());
-                String sucursal = String.valueOf(vista.cbbSucursal1.getSelectedItem());
-                int idSucursal = modelo.agarrarSucursal(sucursal);
               
-                if(modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), idSucursal))
+                if(modelo.agregarEmpleado(vista.txtNombre1.getText(), vista.txtApellidos1.getText(), puesto, vista.txtTelefono1.getText(), vista.txtDomicilio1.getText(), vista.txtRFC1.getText(), vista.txtCorreo1.getText(), empleado[3]))
                 {
                     vista.txtNombre1.setText("");
                     vista.txtCorreo1.setText("");
@@ -72,7 +63,6 @@ public class controlEmpleado implements ActionListener{
                     vista.txtRFC1.setText("");
                     vista.txtTelefono1.setText("");
                     vista.cbbPuesto1.setSelectedIndex(0);
-                    vista.cbbSucursal1.setSelectedIndex(0);
                 }
                 
             }
