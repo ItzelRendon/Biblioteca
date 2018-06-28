@@ -48,7 +48,6 @@ public class Renta extends javax.swing.JPanel {
         txtNombreC = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        lblFechaD = new javax.swing.JLabel();
         lblFechaE = new javax.swing.JLabel();
         btnAgrRenta = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -118,12 +117,7 @@ public class Renta extends javax.swing.JPanel {
         });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        jLabel13.setText("Devolución");
-
-        lblFechaD.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
-        lblFechaD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFechaD.setText("25 - 06 - 2018");
-        lblFechaD.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        jLabel13.setText("Fecha de Renta");
 
         lblFechaE.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         lblFechaE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -209,12 +203,9 @@ public class Renta extends javax.swing.JPanel {
                                 .addGap(99, 99, 99)
                                 .addComponent(jLabel14))
                             .addComponent(jLabel13)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lblFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblFechaD, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 283, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -272,9 +263,7 @@ public class Renta extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechaD, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCanRenta, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
@@ -353,7 +342,6 @@ public class Renta extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    public javax.swing.JLabel lblFechaD;
     public javax.swing.JLabel lblFechaE;
     public javax.swing.JLabel lblID;
     public javax.swing.JLabel lblNombreE;

@@ -73,7 +73,7 @@ public class modeloRenta {
         }
     }
     
-    public boolean insertarRenta(String [][] libros, String frenta, String fdefinida, String idCliente, String idEmpleado){
+    public boolean insertarRenta(String [][] libros, String frenta, String idCliente, String idEmpleado, String idS){
         try{
             //Se abre la conexion con la bd.
             Connection con = conexion.abrirConexion();
@@ -83,11 +83,10 @@ public class modeloRenta {
             int idRenta = ultimaRenta();
             System.out.println(""+idRenta);
             int registroRenta = s.executeUpdate(
-                 "INSERT INTO `renta`(`fechaRenta`, `fechaDefinida`, "
+                 "INSERT INTO `renta`(`fechaRenta`, "
                          + "`cliente_idCliente`, `empleado_idEmpleado`) VALUES "
-                         + "('"+frenta+"','"+fdefinida+"',"+idCliente+","+idEmpleado+")");
-                        
-            
+                         + "('"+frenta+"',"+idCliente+","+idEmpleado+")");
+                       
             //Inserta un registro en la tabla detalleRenta.
             for(int i=0; i<libros.length; i++){
                 System.out.println("i2:"+i);
@@ -95,6 +94,12 @@ public class modeloRenta {
                         "INSERT INTO `detallerenta`(`renta_idRenta`, "
                                 + "`libro_ISBN`, `cantidadLibro`) VALUES "
                                 + "("+idRenta+","+libros[i][0]+","+libros[i][2]+")");
+                //Para obtener la existencia
+                String  [] b = nombreLibro(libros[i][0],idS);
+                //se resta la exstencia con los libros rentados
+                int cantf = Integer.parseInt(b[1])-Integer.parseInt(libros[i][2]);
+                //se cambia en existencia
+                inventarioLibro(libros[i][0], cantf, idS);
             }
                         
             conexion.cerrarConexion(con);
@@ -104,6 +109,24 @@ public class modeloRenta {
             return false;
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+            return false;
+        }
+    }
+    
+    public boolean inventarioLibro(String idLibro, int cant, String idS){
+        try{
+            //abrir la conexion a la BD
+            Connection con = conexion.abrirConexion();
+            //Para ejecutar la consulta
+            Statement s = con.createStatement();
+            int registro = s.executeUpdate(
+                    "UPDATE `inventario` SET "
+                            + "`existencia`="+cant
+                            + " WHERE `libro_isbn` = "+idLibro
+                            + " and `sucursal_idSucursal` = "+idS+";");
+            conexion.cerrarConexion(con);
+            return true;
+        }catch(SQLException e){
             return false;
         }
     }
