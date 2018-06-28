@@ -59,11 +59,11 @@ public class modelologin {
             }
            conexion.cerrarConexion(con);
         }
-         catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+        catch(NullPointerException e){
+            //JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
 
         } catch (SQLException ex) {
-            Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(modelologin.class.getName()).log(Level.SEVERE, null, ex);
         }
          return bandera;        
     }
@@ -95,7 +95,7 @@ public class modelologin {
             return null;
         }
          catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return null;
         }
     }
