@@ -23,7 +23,7 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
             elegirsucursal vistasu = new elegirsucursal();
-            controlelegirsucursal cs = new controlelegirsucursal(vistasu);
+            controlelegirsucursal cs = new controlelegirsucursal(vistasu,0);
             cs.iniciarVista();
     }   
 }
