@@ -108,7 +108,7 @@ public class modeloRenta {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return false;
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return false;
         }
     }
