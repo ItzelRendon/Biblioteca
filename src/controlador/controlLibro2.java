@@ -32,6 +32,7 @@ public class controlLibro2 implements ActionListener, MouseListener{
         this.vista.tbl_libro.addMouseListener(this);
         this.vista.btn_Salir.addActionListener(this);
         this.vista.btn_Agregar2.addActionListener(this);
+        this.vista.btn_Agregar2.setEnabled(false);
     }
     
     public void iniciarVista(){
@@ -67,6 +68,7 @@ public class controlLibro2 implements ActionListener, MouseListener{
     public void mouseClicked(MouseEvent e){
          if(vista.tbl_libro == e.getSource()){
             int fila = vista.tbl_libro.rowAtPoint(e.getPoint());
+            this.vista.btn_Agregar2.setEnabled(true);
             if(fila > -1){
                //Guarda los valores de la tabla a los JTextField
                isbn=(String.valueOf(vista.tbl_libro.getValueAt(fila, 0)));
