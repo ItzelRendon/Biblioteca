@@ -76,7 +76,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btn_Agregar" min="-2" pref="192" max="-2" attributes="0"/>
+                              <Component id="btn_Agregar2" min="-2" pref="192" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btn_Salir" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
@@ -102,7 +102,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_Salir" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_Agregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_Agregar2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
@@ -168,7 +168,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btn_Agregar">
+            <Component class="javax.swing.JButton" name="btn_Agregar2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="72" green="ff" red="ff" type="rgb"/>
@@ -184,7 +184,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Agregarbtn_SalirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Agregar2btn_SalirActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

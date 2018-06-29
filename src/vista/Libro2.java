@@ -34,7 +34,7 @@ public class Libro2 extends javax.swing.JFrame {
         btn_Salir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_libro = new javax.swing.JTable();
-        btn_Agregar = new javax.swing.JButton();
+        btn_Agregar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,13 +69,13 @@ public class Libro2 extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbl_libro);
 
-        btn_Agregar.setBackground(new java.awt.Color(255, 255, 114));
-        btn_Agregar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        btn_Agregar.setText("Agregar libro a sucursal");
-        btn_Agregar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+        btn_Agregar2.setBackground(new java.awt.Color(255, 255, 114));
+        btn_Agregar2.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        btn_Agregar2.setText("Agregar libro a sucursal");
+        btn_Agregar2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Agregar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Agregarbtn_SalirActionPerformed(evt);
+                btn_Agregar2btn_SalirActionPerformed(evt);
             }
         });
 
@@ -87,7 +87,7 @@ public class Libro2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btn_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_Agregar2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -108,7 +108,7 @@ public class Libro2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Salir)
-                    .addComponent(btn_Agregar))
+                    .addComponent(btn_Agregar2))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -151,9 +151,9 @@ public class Libro2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_Salirbtn_SalirActionPerformed
 
-    private void btn_Agregarbtn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Agregarbtn_SalirActionPerformed
+    private void btn_Agregar2btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Agregar2btn_SalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_Agregarbtn_SalirActionPerformed
+    }//GEN-LAST:event_btn_Agregar2btn_SalirActionPerformed
 
     private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
         // TODO add your handling code here:
@@ -196,7 +196,7 @@ public class Libro2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn_Agregar;
+    public javax.swing.JButton btn_Agregar2;
     public javax.swing.JButton btn_Salir;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

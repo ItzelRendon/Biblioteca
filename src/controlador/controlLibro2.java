@@ -31,7 +31,7 @@ public class controlLibro2 implements ActionListener, MouseListener{
         this.empleado = empleado;
         this.vista.tbl_libro.addMouseListener(this);
         this.vista.btn_Salir.addActionListener(this);
-        this.vista.btn_Agregar.addActionListener(this);
+        this.vista.btn_Agregar2.addActionListener(this);
     }
     
     public void iniciarVista(){
@@ -48,11 +48,13 @@ public class controlLibro2 implements ActionListener, MouseListener{
             vista.setVisible(false);
         }
         
-        if(vista.btn_Agregar == evento.getSource()){
+        if(vista.btn_Agregar2 == evento.getSource()){
             existencia = JOptionPane.showInputDialog("Existencia:", "");
-            modelo.Modificar(isbn, Integer.parseInt(empleado[3]),Integer.parseInt(existencia));
-            JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-            vista.tbl_libro.setModel(modelo.Consultar());
+            if(existencia != null){
+                modelo.Modificar(isbn, Integer.parseInt(empleado[3]),Integer.parseInt(existencia));
+                JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
+                vista.tbl_libro.setModel(modelo.Consultar());
+            }
         }
     }
     
