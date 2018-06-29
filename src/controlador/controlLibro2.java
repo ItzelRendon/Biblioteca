@@ -56,6 +56,9 @@ public class controlLibro2 implements ActionListener, MouseListener{
                     JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
                     vista.tbl_libro.setModel(modelo.Consultar());
                 }
+                else{
+                    JOptionPane.showMessageDialog(null, "No se ha ingresado la existencia");
+                }
                 
             }
         }
