@@ -51,9 +51,12 @@ public class controlLibro2 implements ActionListener, MouseListener{
         if(vista.btn_Agregar2 == evento.getSource()){
             existencia = JOptionPane.showInputDialog("Existencia:", "");
             if(existencia != null){
-                modelo.Modificar(isbn, Integer.parseInt(empleado[3]),Integer.parseInt(existencia));
-                JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-                vista.tbl_libro.setModel(modelo.Consultar());
+                if(!existencia.equals("")){
+                    modelo.Modificar(isbn, Integer.parseInt(empleado[3]),Integer.parseInt(existencia));
+                    JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
+                    vista.tbl_libro.setModel(modelo.Consultar());
+                }
+                
             }
         }
     }
