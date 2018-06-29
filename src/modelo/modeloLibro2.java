@@ -15,39 +15,12 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author alfredo
+ * @author Adriana
  */
-public class modelosucursal {
-    private String id;
-    private String locacion;
-    private String nombre;
-    private String telefono;
+public class modeloLibro2 {
     private ConexionBD conexion = new ConexionBD();
-    
-    public boolean Insertar(String locacion, String nombre, String telefono) 
-    {            
-        try {
-            Connection con = conexion.abrirConexion();
-            //Para ejecutar la consulta
-            Statement s = con.createStatement();
-            
-            //Update en la tabla destino
-            int registro = s.executeUpdate(
-                 "insert into sucursal(locación, nombre, telefono)values("
-                         + "'"+locacion+"','"+nombre+"','"+telefono+"');");                               
-            conexion.cerrarConexion(con);
-            return true;
-            
-        }catch (SQLException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
-            return false;
-        }
-        catch(NullPointerException e){
-            return false;
-        }
-    }
-    
-    public DefaultTableModel destinoConsultar(){
+     
+    public DefaultTableModel Consultar(){
         try{
             //PARA ABRIR A LA BASE DE DATOS
             Connection con = conexion.abrirConexion();
@@ -58,7 +31,9 @@ public class modelosucursal {
             
             try{
                 //EJECUTAR LA CONSULTA
-                ResultSet rs = s.executeQuery("select idSucursal as ID, locación as locación, nombre as nombre, telefono as telefono from sucursal;");
+                ResultSet rs = s.executeQuery("SELECT `libro_isbn`, `titulo`, `nombre`, `existencia` FROM `inventario` "
+                        + "INNER JOIN libro ON inventario.libro_isbn=libro.isbn "
+                        + "INNER JOIN sucursal ON inventario.sucursal_idSucursal=sucursal.idSucursal");
                 //PARA ESTABLECER EL MODELO AL JTABLE
                 modelo = new DefaultTableModel();
                 //OBTENIENDO LA INFORMACION DE LAS COLUMNAS
@@ -89,5 +64,5 @@ public class modelosucursal {
         catch(NullPointerException e){
             return null;
         }
-}
+    }   
 }

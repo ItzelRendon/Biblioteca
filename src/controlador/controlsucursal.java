@@ -7,86 +7,69 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.modelosucursal;
+import vista.Frame;
 import vista.Sucursal;
+import vista.menu;
 
 /**
  *
  * @author alfredo
  */
-public class controlsucursal implements ActionListener 
+public class controlsucursal implements ActionListener, MouseListener
 {
     private Sucursal vista;
     private modelosucursal modelo;
+    private Frame frame;
+    private String [] empleado;
     
-    public controlsucursal(Sucursal vista, modelosucursal modelo)
+    public controlsucursal(Sucursal vista, modelosucursal modelo, Frame frame, String [] empleado)
     {
         this.modelo = modelo;
         this.vista = vista;
-        this.vista.textonombre.addActionListener(this);
-        this.vista.textotelefono.addActionListener(this);
-        this.vista.textotelefono.addActionListener(this);
-        this.vista.textoid.addActionListener(this);
+        this.frame = frame;
+        this.empleado = empleado;
+        this.vista.table.addMouseListener(this);
+        this.vista.btn_Salir.addActionListener(this);
     }
     
     public void iniciarVista(){
+         vista.table.setModel(modelo.destinoConsultar());
          vista.setVisible(true);
-         vista.setSize(600, 400);
      }
-     
-     //Limpia los JTextField
-     public void Limpiar(){
-        vista.textonombre.setText("");
-        vista.textotelefono.setText("");
-        vista.textodireccion.setText("");
-        vista.textoid.setText("");
-     }
-     
-     //Se valida si los campos estas vacios o no
-     public String validacionCamposVacios()
-    {
-        if(vista.textonombre.getText().isEmpty() || vista.textotelefono.getText().isEmpty() || vista.textodireccion.getText().isEmpty() || vista.textoid.getName().isEmpty())
-            return "Favor de llenar todos los campos"; 
-        else return null;
-    }
-     
-     //Habilita botones
-     public void habilitar(){
-         vista.botonagregar.setEnabled(true);
-         vista.botoncancelar.setEnabled(true);
-     }
-     
-     //Desabilita botones
-     public void desabilitar(){
-         vista.botonagregar.setEnabled(false);
-         vista.botoncancelar.setEnabled(false);
-     }
-     
-     //Compara si los campos no estan vacios para habilitar los botones
-     public void CamposVacios(){
-        if(vista.textonombre.getText().isEmpty() || vista.textotelefono.getText().isEmpty() || vista.textodireccion.getText().isEmpty() || vista.textoid.getName().isEmpty())
-            desabilitar();
-        else
-             habilitar();
-     }
-     
+    
     @Override
-     public void actionPerformed(ActionEvent e)
-     {
-         CamposVacios();
-         if(vista.botonagregar == e.getSource())
-         {
-             if(validacionCamposVacios() == null)
-             {
-                 if(modelo.Insertar(vista.textonombre.getText(), vista.textotelefono.getText(), vista.textodireccion.getText(), vista.textoid.getText()))
-                 {
-                    JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
-                    Limpiar();
-                 }
-             }
-             else
-                 JOptionPane.showMessageDialog(null, ""+validacionCamposVacios());
-         }
+    public void actionPerformed(ActionEvent evento){
+        if(vista.btn_Salir == evento.getSource()) {
+            menu vistaMenu = new menu();
+            controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
+            new CambiaPanel(frame.pnl_cambiante,vistaMenu);
+            control.iniciarVista();
+        }
+         
      }
+          @Override
+     public void mousePressed(MouseEvent e){
+         
+     }
+     
+     @Override
+     public void mouseReleased(MouseEvent e){
+         
+     }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
 }

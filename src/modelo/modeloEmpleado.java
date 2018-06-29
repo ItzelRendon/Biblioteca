@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class modeloEmpleado {
     private ConexionBD conexion = new ConexionBD();
     
-    public boolean agregarEmpleado(String nombre, String apellidos, String puesto, String telefono, String domicilio, String rfc, String correo, int sucursal) {            
+    public boolean agregarEmpleado(String nombre, String apellidos, String puesto, String telefono, String domicilio, String rfc, String correo, String sucursal) {            
         try {
             Connection con = conexion.abrirConexion();
             //Para ejecutar la consulta
@@ -38,7 +38,7 @@ public class modeloEmpleado {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return false;    
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return false;
         }
     } 
@@ -68,7 +68,7 @@ public class modeloEmpleado {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return 0;    
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return 0;
         }
     }
@@ -102,7 +102,7 @@ public class modeloEmpleado {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return null;    
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return null;
         }
     }
@@ -134,7 +134,7 @@ public class modeloEmpleado {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return 0;    
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return 0;
         }
     }
@@ -164,7 +164,7 @@ public class modeloEmpleado {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return 0;    
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return 0;
    }
    }

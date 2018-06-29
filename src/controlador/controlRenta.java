@@ -63,21 +63,9 @@ public class controlRenta implements ActionListener, KeyListener{
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String fD = dateFormat.format(date);
         vista.lblFechaE.setText(fD);
-                
-        //Sumarle
-        Calendar c = Calendar.getInstance();
-        try {
-            c.setTime(dateFormat.parse(fD));
-        } catch (ParseException ex) {
-            System.out.println("Error");
-        }
-        c.add(Calendar.DATE, 5);  // number of days to add
-        String fE = dateFormat.format(c.getTime());  // dt is now the new date
-        vista.lblFechaD.setText(fE);
+               
         this.vista.lblID.setText(empleado[2]);
         this.vista.lblNombreE.setText(empleado[0]+" "+empleado[1]);
-        //Limpia la lista
-        listModel.clear();
         limpiarCajas();
         
     }
@@ -93,6 +81,8 @@ public class controlRenta implements ActionListener, KeyListener{
         
         this.vista.txtNombreC.setEnabled(false);
         this.vista.txtNombreL.setEnabled(false);
+        //Limpia la lista
+        listModel.clear();
     }
     
     public String formatoFecha(String fecha){
@@ -114,8 +104,6 @@ public class controlRenta implements ActionListener, KeyListener{
             int seleccion = JOptionPane.showOptionDialog(null, "¿Estás seguro que quieres cancelar?", "¡Atención!", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if(seleccion == 0){
                 this.limpiarCajas();        
-                //Limpia la lista
-                listModel.clear();
             }
                 
             if(seleccion == 1){
@@ -173,12 +161,11 @@ public class controlRenta implements ActionListener, KeyListener{
                     librosR[i][1] = parts[1];
                     librosR[i][2] = parts[2];
                 }
-                if(modelo.insertarRenta(librosR, formatoFecha(vista.lblFechaE.getText()), formatoFecha(vista.lblFechaD.getText()), vista.txtIDCliente.getText(), vista.lblID.getText()))
+      //SUCURSAL          
+                if(modelo.insertarRenta(librosR, formatoFecha(vista.lblFechaE.getText()), vista.txtIDCliente.getText(), vista.lblID.getText(), empleado[3]))
                 {
-                    JOptionPane.showMessageDialog(null, "Éxito");   
-                }
-                else {
-                    JOptionPane.showMessageDialog(null, "Error");   
+                    JOptionPane.showMessageDialog(null, "Se ha realizado su renta con éxito");   
+                    limpiarCajas();
                 }
                 
             }
@@ -200,8 +187,8 @@ public class controlRenta implements ActionListener, KeyListener{
             if(e.getKeyCode() == KeyEvent.VK_ENTER){
                 //cuando hay algo en el isbn
                 if(!vista.txtISBN.getText().equals("")){
-    //Agregar id de la sucursal
-                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),"1");
+    //SUCURSAL
+                    String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),empleado[3]);
                     if(b[0] == null)
                         vista.txtNombreL.setText("ID Incorrecto");
                     else{

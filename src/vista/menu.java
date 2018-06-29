@@ -42,6 +42,7 @@ public class menu extends javax.swing.JPanel {
         btnEmpleado = new javax.swing.JButton();
         btnSucursal = new javax.swing.JButton();
         btnDevolucion = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -128,23 +129,6 @@ public class menu extends javax.swing.JPanel {
             }
         });
 
-        btnInventario.setBackground(new java.awt.Color(255, 255, 255));
-        btnInventario.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/libro-abierto.png"))); // NOI18N
-        btnInventario.setText("Inventario");
-        btnInventario.setBorder(null);
-        btnInventario.setBorderPainted(false);
-        btnInventario.setContentAreaFilled(false);
-        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnInventario.setDefaultCapable(false);
-        btnInventario.setFocusPainted(false);
-        btnInventario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnInventario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventarioActionPerformed(evt);
-            }
-        });
 
         btnLibro.setBackground(new java.awt.Color(255, 255, 255));
         btnLibro.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
@@ -189,6 +173,29 @@ public class menu extends javax.swing.JPanel {
         btnSucursal.setFocusPainted(false);
         btnSucursal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSucursal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSucursalActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/salida.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setDefaultCapable(false);
+        btnSalir.setFocusPainted(false);
+        btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnDevolucion.setBackground(new java.awt.Color(255, 255, 255));
         btnDevolucion.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
@@ -218,7 +225,7 @@ public class menu extends javax.swing.JPanel {
                     .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSucursal)
                     .addComponent(btnDevolucion))
-                .addGap(61, 61, 61))
+                    .addComponent(btnSalir))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,6 +301,14 @@ public class menu extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRentaActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSucursalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSucursalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btSalir;
@@ -303,6 +318,7 @@ public class menu extends javax.swing.JPanel {
     public javax.swing.JButton btnInventario;
     public javax.swing.JButton btnLibro;
     public javax.swing.JButton btnRenta;
+    public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnSucursal;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
