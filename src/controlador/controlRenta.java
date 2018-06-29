@@ -33,7 +33,10 @@ public class controlRenta implements ActionListener, KeyListener{
     private Frame frame;
     private String [] empleado;
     DefaultListModel listModel;
-               
+    public controlRenta()
+    {
+        
+    }
     public controlRenta(modeloRenta modelo, Renta vista, Frame frame, String [] empleado) {
         this.modelo = modelo;
         this.vista = vista;
@@ -163,9 +166,6 @@ public class controlRenta implements ActionListener, KeyListener{
                 {
                     JOptionPane.showMessageDialog(null, "Se ha realizado su renta con éxito");   
                     limpiarCajas();
-                }
-                else {
-                    JOptionPane.showMessageDialog(null, "Error");   
                 }
                 
             }

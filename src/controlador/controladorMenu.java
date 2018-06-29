@@ -9,11 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.modeloCliente;
+import modelo.modeloDevolucion;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
 import modelo.modeloRenta;
 import modelo.modelosucursal;
 import vista.Cliente;
+import vista.Devolucion;
 import vista.Empleado;
 import vista.Frame;
 import vista.Libro;
@@ -42,6 +44,7 @@ public class controladorMenu implements ActionListener{
         this.empleado=empleado;
         this.vista.btnCliente.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
+        this.vista.btnDevolucion.addActionListener(this);
         this.vista.btnSucursal.addActionListener(this);
     }
    
@@ -54,20 +57,15 @@ public class controladorMenu implements ActionListener{
     public void actionPerformed(ActionEvent e) {  
         if(vista.btnEmpleado == e.getSource())
         {
-            
             Empleado vistaEmpleado = new Empleado();
             modeloEmpleado modeloEmpleado = new modeloEmpleado();
             controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame, empleado);
-            //Lo añade al panel
-            frame.pnl_cambiante.add(vistaEmpleado);
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
             //cambio de panel
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaEmpleado);
             //Y lo muestra.
             controlEmpleado.iniciarVista();
         } 
-        else if(vista.btnRenta == e.getSource()){
+         if(vista.btnRenta == e.getSource()){
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
@@ -88,7 +86,7 @@ public class controladorMenu implements ActionListener{
             new CambiaPanel(frame.pnl_cambiante,v); 
             con.iniciarVista();
         }
-        if(vista.btnLibro == e.getSource())
+         if(vista.btnLibro == e.getSource())
         {
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
@@ -104,6 +102,16 @@ public class controladorMenu implements ActionListener{
              //Y lo muestra.
             controlLibro.iniciarVista();
         }
+         if(vista.btnDevolucion == e.getSource())
+        {
+            Devolucion vistaDevolucion = new Devolucion();
+            modeloDevolucion modeloDevolucion = new modeloDevolucion();
+            controladorDevolucion controlDevolucion = new controladorDevolucion(modeloDevolucion, vistaDevolucion, frame, empleado);
+            //cambio de panel
+            CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaDevolucion);
+            //Y lo muestra.
+            controlDevolucion.iniciarVista();
+        }
         if(vista.btnSucursal == e.getSource()){
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
@@ -118,7 +126,7 @@ public class controladorMenu implements ActionListener{
              //Y lo muestra.
             con.iniciarVista();
         }
-        if(vista.btnSalir == e.getSource())
+         if(vista.btnSalir == e.getSource())
         {
             if (JOptionPane.showConfirmDialog(vista,
                     "¿Estás seguro que deseas salir?", "Biblioteca",
@@ -128,4 +136,4 @@ public class controladorMenu implements ActionListener{
             }
         }
     }   
-}
+    }

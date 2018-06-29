@@ -23,6 +23,7 @@ public class controlLibro implements ActionListener, MouseListener{
     private Libro2 vista2;
     private Frame frame;
     private String [] empleado;
+    private int id_Sucursal;
     
     public controlLibro(modeloLibro modelo, Libro vista, Frame frame, Libro2 vista2, String [] empleado){
         this.modelo = modelo;
@@ -46,8 +47,23 @@ public class controlLibro implements ActionListener, MouseListener{
     public void iniciarVista(){
         vista.setVisible(true);
         this.vista.jcb_Genero.setSelectedItem(null);
-        vista.txt_Sucursal.setText("Sucursal 1");
+        Nombre_Sucursal();        
         vista.txt_Sucursal.setEnabled(false);
+    }
+    
+    public void Nombre_Sucursal(){
+        if(empleado[3].equals("1")){
+            vista.txt_Sucursal.setText("NORTE");
+            id_Sucursal=1;
+        }
+        else if(empleado[3].equals("2")){
+            vista.txt_Sucursal.setText("SUR");
+            id_Sucursal=2;
+        }
+        else if(empleado[3].equals("3")){
+            vista.txt_Sucursal.setText("CENTRO");
+            id_Sucursal=3;
+        }
     }
      
     //Limpia los JTextField
@@ -93,11 +109,10 @@ public class controlLibro implements ActionListener, MouseListener{
         if(vista.btn_Agregar == evento.getSource()) {
             if(validacionCamposVacios()==null)
             {
-                int Sucursal=1;
                 if(modelo.InsertarLibro(vista.txt_ISBN.getText(), vista.txt_Titulo.getText(), 
                     vista.jcb_Genero.getSelectedItem().toString(), vista.txt_Autor.getText(), 
                     vista.txt_Editorial.getText(), vista.jsp_Paginas.getValue().toString())){
-                if(modelo.InsertarInventario(vista.txt_ISBN.getText(), Sucursal, 
+                if(modelo.InsertarInventario(vista.txt_ISBN.getText(), id_Sucursal, 
                     Integer.parseInt(vista.jsp_Existencia.getValue().toString()))){
                 JOptionPane.showMessageDialog(null, "Registro insertado exitosamente");
                 Limpiar();

@@ -72,9 +72,9 @@ public class controlelegirsucursal implements ActionListener{
             }
             else if(guardar == valor2)
             {
-                ip = "192.168.43.37";
+                ip = "192.168.1.71";
             }
-            else
+            else if(guardar == valor3)
             {
                 ip = "localhost";
             }

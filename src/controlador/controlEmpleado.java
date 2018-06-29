@@ -60,6 +60,7 @@ public class controlEmpleado implements ActionListener{
                     vista.txtNombre1.setText("");
                     vista.txtCorreo1.setText("");
                     vista.txtDomicilio1.setText("");
+                    vista.txtApellidos1.setText("");
                     vista.txtRFC1.setText("");
                     vista.txtTelefono1.setText("");
                     vista.cbbPuesto1.setSelectedIndex(0);
@@ -72,11 +73,6 @@ public class controlEmpleado implements ActionListener{
             menu vistaMenu = new menu();
 
             controladorMenu control = new controladorMenu(vistaMenu, frame, empleado);
-            //Lo añade al panel
-            frame.pnl_cambiante.add(vistaMenu);
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
-            
             //cambio de panel
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaMenu);
             //Y lo muestra.

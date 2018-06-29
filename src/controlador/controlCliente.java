@@ -90,8 +90,7 @@ public class controlCliente implements ActionListener{
                 {
                     JOptionPane.showMessageDialog(null, "Registro agregado exitosamente");
                     limpiar(); 
-                }else 
-                    JOptionPane.showMessageDialog(null, "Error al insertar los datos");
+                }
            }
            else 
                JOptionPane.showMessageDialog(null, ""+validacionCamposVacios());

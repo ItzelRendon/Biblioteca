@@ -40,8 +40,11 @@ public class modeloRenta {
         }
         catch(SQLException e)
         {
-            System.out.println("Error!");
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return null;    
+        }
+        catch(NullPointerException e){
+            return null;
         }
     }
     
@@ -68,8 +71,11 @@ public class modeloRenta {
         }
         catch(SQLException e)
         {
-            System.out.println("Error!");
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return null;    
+        }
+        catch(NullPointerException e){
+            return null;
         }
     }
     
@@ -106,7 +112,7 @@ public class modeloRenta {
             JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
             return false;
         }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
+//            JOptionPane.showMessageDialog(null, "Error al intentar conectar con el servidor.");
             return false;
         }
     }
@@ -125,6 +131,10 @@ public class modeloRenta {
             conexion.cerrarConexion(con);
             return true;
         }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return false;
+        }
+        catch(NullPointerException e){
             return false;
         }
     }
@@ -147,7 +157,11 @@ public class modeloRenta {
         }
         catch(SQLException e)
         {
-          return -1;    
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return -1;    
+        }
+        catch(NullPointerException e){
+            return -2;
         }
     }
 }
