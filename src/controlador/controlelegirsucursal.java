@@ -68,16 +68,17 @@ public class controlelegirsucursal implements ActionListener{
             if(guardar == valor1)
             {
                 //ip = "192.168.63.12";
-                ip = "localhost";
+                ip = "192.168.43.65";
             }
             else if(guardar == valor2)
             {
                // ip = "192.168.1.71";
                 ip = "localhost";
+                ip = "192.168.43.12";
             }
             else if(guardar == valor3)
             {
-                ip = "localhost";
+                ip = "192.168.43.141";
             }
             //JOptionPane.showMessageDialog(null, "La ip es: " + ip);
             
