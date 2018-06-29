@@ -21,7 +21,7 @@ public class modeloCliente {
         {
             Connection con= conexion.abrirConexion(); 
             Statement s= con.createStatement(); 
-            int registro =s.executeUpdate("insert into cliente(nombre, apellidos, telefono, domicilio, correo, multa)values('"+cNombre+"','"+cApellidos+"','"+cTelefono+"','"+cDomicilio+"','"+cCorreo+"',"+0.0+");"); 
+            int registro =s.executeUpdate("insert into cliente(nombre, apellidos, telefono, domicilio, correo)values('"+cNombre+"','"+cApellidos+"','"+cTelefono+"','"+cDomicilio+"','"+cCorreo+"');"); 
             conexion.cerrarConexion(con); 
             return true; 
         }

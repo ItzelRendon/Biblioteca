@@ -43,8 +43,8 @@ public class controladorMenu implements ActionListener{
         this.vista.btnRenta.addActionListener(this);
         this.empleado=empleado;
         this.vista.btnCliente.addActionListener(this);
-        this.vista.btnDevolucion.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
+        this.vista.btnDevolucion.addActionListener(this);
         this.vista.btnSucursal.addActionListener(this);
     }
    
@@ -65,7 +65,7 @@ public class controladorMenu implements ActionListener{
             //Y lo muestra.
             controlEmpleado.iniciarVista();
         } 
-        else if(vista.btnRenta == e.getSource()){
+         if(vista.btnRenta == e.getSource()){
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
             frame.pnl_cambiante.repaint();
@@ -86,7 +86,7 @@ public class controladorMenu implements ActionListener{
             new CambiaPanel(frame.pnl_cambiante,v); 
             con.iniciarVista();
         }
-        else if(vista.btnLibro == e.getSource())
+         if(vista.btnLibro == e.getSource())
         {
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
@@ -102,7 +102,7 @@ public class controladorMenu implements ActionListener{
              //Y lo muestra.
             controlLibro.iniciarVista();
         }
-        else if(vista.btnDevolucion == e.getSource())
+         if(vista.btnDevolucion == e.getSource())
         {
             Devolucion vistaDevolucion = new Devolucion();
             modeloDevolucion modeloDevolucion = new modeloDevolucion();
@@ -111,6 +111,7 @@ public class controladorMenu implements ActionListener{
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaDevolucion);
             //Y lo muestra.
             controlDevolucion.iniciarVista();
+        }
         if(vista.btnSucursal == e.getSource()){
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
@@ -125,7 +126,7 @@ public class controladorMenu implements ActionListener{
              //Y lo muestra.
             con.iniciarVista();
         }
-        if(vista.btnSalir == e.getSource())
+         if(vista.btnSalir == e.getSource())
         {
             if (JOptionPane.showConfirmDialog(vista,
                     "¿Estás seguro que deseas salir?", "Biblioteca",
@@ -135,4 +136,4 @@ public class controladorMenu implements ActionListener{
             }
         }
     }   
-    }}
+    }
