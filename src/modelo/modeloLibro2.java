@@ -65,4 +65,27 @@ public class modeloLibro2 {
             return null;
         }
     }   
+    
+    public boolean Modificar(String ISBN, int id_Sucursal, int Existencia) {            
+        try {
+            Connection con = conexion.abrirConexion();
+            //Para ejecutar la consulta
+            Statement s = con.createStatement();
+            
+            //Update en la tabla destino
+            int registro = s.executeUpdate(
+                 "INSERT INTO `inventario`(`libro_isbn`, `sucursal_idSucursal`, `existencia`) VALUES ("
+                         +"'"+ISBN+"','"+id_Sucursal+"','"+Existencia+"');");
+            
+            conexion.cerrarConexion(con);
+            return true;
+            
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error al intentar abrir la base de datos.");
+            return false;
+        }
+        catch(NullPointerException e){
+            return false;
+        }
+    }
 }

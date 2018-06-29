@@ -22,7 +22,7 @@ public class controlLibro implements ActionListener, MouseListener{
     private Libro vista;
     private Libro2 vista2;
     private Frame frame;
-    private String [] empleado;
+    public String [] empleado;
     private int id_Sucursal;
     
     public controlLibro(modeloLibro modelo, Libro vista, Frame frame, Libro2 vista2, String [] empleado){
@@ -134,7 +134,7 @@ public class controlLibro implements ActionListener, MouseListener{
         
         if(vista.btn_Inventario == evento.getSource()){
             modeloLibro2 modelo = new modeloLibro2(); 
-            controlLibro2 con = new controlLibro2(modelo, vista2); 
+            controlLibro2 con = new controlLibro2(modelo, vista2, empleado); 
             con.iniciarVista(); 
         }
     }

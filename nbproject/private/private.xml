@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controlEmpleado.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/Devolucion.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/controlador/controladorDevolucion.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/modelo/ConexionBD.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/menu.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/vista/Frame.java</file>
-            <file>file:/C:/Users/Esmeralda%20Meraz%20Soto/Documents/GitHub2/Biblioteca/src/modelo/modeloDevolucion.java</file>
+            <file>file:/C:/Users/CHAFI/Documents/NetBeansProjects/Biblioteca/src/controlador/controlelegirsucursal.java</file>
+            <file>file:/C:/Users/CHAFI/Documents/NetBeansProjects/Biblioteca/src/biblioteca/Biblioteca.java</file>
+            <file>file:/C:/Users/CHAFI/Documents/NetBeansProjects/Biblioteca/src/modelo/ConexionBD.java</file>
         </group>
     </open-files>
 </project-private>

@@ -72,7 +72,8 @@ public class controlelegirsucursal implements ActionListener{
             }
             else if(guardar == valor2)
             {
-                ip = "192.168.1.71";
+               // ip = "192.168.1.71";
+                ip = "localhost";
             }
             else if(guardar == valor3)
             {
@@ -80,7 +81,7 @@ public class controlelegirsucursal implements ActionListener{
             }
             //JOptionPane.showMessageDialog(null, "La ip es: " + ip);
             
-//            vista.panel_elegir.removeAll();
+//            vista.panel_el0egir.removeAll();
 //            vista.panel_elegir.revalidate();
 //            vista.panel_elegir.repaint();
             if (bandera != 1)
