@@ -88,17 +88,15 @@ public class modeloRenta {
             Statement s = con.createStatement();
             //Inserta un registro en la tabla Viaje.
             int idRenta = 0;
-            
             PreparedStatement p = con.prepareStatement(
-            "INSERT INTO renta (fechaRenta, cliente_idCliente, empleado_idEmpleado) VALUES "
-                    + "('"+frenta+"', "+idCliente+", "+idEmpleado+");", PreparedStatement.RETURN_GENERATED_KEYS);
+                 "INSERT INTO `renta`(`fechaRenta`, "
+                         + "`cliente_idCliente`, `empleado_idEmpleado`) VALUES "
+                         + "('"+frenta+"',"+idCliente+","+idEmpleado+")",PreparedStatement.RETURN_GENERATED_KEYS);
             p.executeUpdate();
             ResultSet gK = p.getGeneratedKeys();
-            if(gK.next())
-            {
+            if (gK.next())
                 idRenta = gK.getInt(1);
-            }
-                       
+
             //Inserta un registro en la tabla detalleRenta.
             for(int i=0; i<libros.length; i++){
                 int registroDetalleRenta = s.executeUpdate(
