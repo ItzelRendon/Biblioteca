@@ -8,11 +8,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.modeloCliente;
+import modelo.modeloDevolucion;
 import modelo.modeloEmpleado;
 import modelo.modeloLibro;
 import vista.Libro;
 import modelo.modeloRenta;
 import vista.Cliente;
+import vista.Devolucion;
 import vista.Empleado;
 import vista.Frame;
 import vista.Renta;
@@ -37,6 +39,7 @@ public class controladorMenu implements ActionListener{
         this.vista.btnRenta.addActionListener(this);
         this.empleado=empleado;
         this.vista.btnCliente.addActionListener(this);
+        this.vista.btnDevolucion.addActionListener(this);
     }
    
     public void iniciarVista()
@@ -48,14 +51,9 @@ public class controladorMenu implements ActionListener{
     public void actionPerformed(ActionEvent e) {  
         if(vista.btnEmpleado == e.getSource())
         {
-            
             Empleado vistaEmpleado = new Empleado();
             modeloEmpleado modeloEmpleado = new modeloEmpleado();
             controlEmpleado controlEmpleado = new controlEmpleado(modeloEmpleado, vistaEmpleado, frame, empleado);
-            //Lo añade al panel
-            frame.pnl_cambiante.add(vistaEmpleado);
-            frame.pnl_cambiante.revalidate();
-            frame.pnl_cambiante.repaint();
             //cambio de panel
             CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaEmpleado);
             //Y lo muestra.
@@ -82,7 +80,7 @@ public class controladorMenu implements ActionListener{
             new CambiaPanel(frame.pnl_cambiante,v); 
             con.iniciarVista();
         }
-        if(vista.btnLibro == e.getSource())
+        else if(vista.btnLibro == e.getSource())
         {
             frame.pnl_cambiante.removeAll();
             frame.pnl_cambiante.revalidate();
@@ -96,6 +94,16 @@ public class controladorMenu implements ActionListener{
             frame.pnl_cambiante.repaint();
             //Y lo muestra.
             controlLibro.iniciarVista();
+        }
+        else if(vista.btnDevolucion == e.getSource())
+        {
+            Devolucion vistaDevolucion = new Devolucion();
+            modeloDevolucion modeloDevolucion = new modeloDevolucion();
+            controladorDevolucion controlDevolucion = new controladorDevolucion(modeloDevolucion, vistaDevolucion, frame, empleado);
+            //cambio de panel
+            CambiaPanel cp = new CambiaPanel(frame.pnl_cambiante, vistaDevolucion);
+            //Y lo muestra.
+            controlDevolucion.iniciarVista();
         }
     }   
 }
