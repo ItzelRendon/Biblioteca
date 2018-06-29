@@ -130,7 +130,7 @@ public class controlRenta implements ActionListener, KeyListener{
             }
             else{
                 //consulta el libro
-                String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),"1");
+                String  [] b = modelo.nombreLibro(vista.txtISBN.getText(),empleado[3]);
                 //Si hay menos libros de los que se ingresa
                 if(Integer.parseInt(b[1]) < spn){
                     JOptionPane.showMessageDialog(null, "Cantidad incorrecta");
