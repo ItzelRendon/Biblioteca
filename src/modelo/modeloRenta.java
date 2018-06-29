@@ -6,6 +6,7 @@
 package modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -86,11 +87,17 @@ public class modeloRenta {
             //Permite crear consultas
             Statement s = con.createStatement();
             //Inserta un registro en la tabla Viaje.
-            int idRenta = ultimaRenta();
-            int registroRenta = s.executeUpdate(
-                 "INSERT INTO `renta`(`fechaRenta`, "
-                         + "`cliente_idCliente`, `empleado_idEmpleado`) VALUES "
-                         + "('"+frenta+"',"+idCliente+","+idEmpleado+")");
+            int idRenta = 0;
+            
+            PreparedStatement p = con.prepareStatement(
+            "INSERT INTO renta (fechaRenta, cliente_idCliente, empleado_idEmpleado) VALUES "
+                    + "('"+frenta+"', "+idCliente+", "+idEmpleado+");", PreparedStatement.RETURN_GENERATED_KEYS);
+            p.executeUpdate();
+            ResultSet gK = p.getGeneratedKeys();
+            if(gK.next())
+            {
+                idRenta = gK.getInt(1);
+            }
                        
             //Inserta un registro en la tabla detalleRenta.
             for(int i=0; i<libros.length; i++){

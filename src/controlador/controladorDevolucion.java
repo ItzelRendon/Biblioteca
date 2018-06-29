@@ -74,6 +74,10 @@ public class controladorDevolucion implements ActionListener{
                         model = modelo.librosDetalleRenta(Integer.parseInt(vista.txtIdRenta.getText()));
                         vista.tblDevolucion.setModel(model);
                         rows = model.getRowCount();
+                        if(rows==0)
+                        {
+                            JOptionPane.showMessageDialog(null, "No existe la renta");
+                        }
                     }
                     else
                     {
