@@ -96,6 +96,7 @@ public class modeloRenta {
             ResultSet gK = p.getGeneratedKeys();
             if (gK.next())
                 idRenta = gK.getInt(1);
+
             //Inserta un registro en la tabla detalleRenta.
             for(int i=0; i<libros.length; i++){
                 int registroDetalleRenta = s.executeUpdate(

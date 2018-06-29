@@ -34,6 +34,7 @@ public class Libro2 extends javax.swing.JFrame {
         btn_Salir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_libro = new javax.swing.JTable();
+        btn_Agregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +53,12 @@ public class Libro2 extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane2MouseClicked(evt);
+            }
+        });
+
         tbl_libro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -62,6 +69,16 @@ public class Libro2 extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbl_libro);
 
+        btn_Agregar.setBackground(new java.awt.Color(255, 255, 114));
+        btn_Agregar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        btn_Agregar.setText("Agregar libro a sucursal");
+        btn_Agregar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Agregarbtn_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -69,7 +86,10 @@ public class Libro2 extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(btn_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jSeparator4)
                         .addComponent(jLabel7)
@@ -86,7 +106,9 @@ public class Libro2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_Salir)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Salir)
+                    .addComponent(btn_Agregar))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -129,6 +151,14 @@ public class Libro2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_Salirbtn_SalirActionPerformed
 
+    private void btn_Agregarbtn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Agregarbtn_SalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Agregarbtn_SalirActionPerformed
+
+    private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -166,6 +196,7 @@ public class Libro2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn_Agregar;
     public javax.swing.JButton btn_Salir;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

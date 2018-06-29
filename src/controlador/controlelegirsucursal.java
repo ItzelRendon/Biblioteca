@@ -76,11 +76,12 @@ public class controlelegirsucursal implements ActionListener{
             }
             else if(guardar == valor3)
             {   //Itzel master 1
+                //ip = "192.168.63.12";
                 ip = "192.168.43.141";
             }
             //JOptionPane.showMessageDialog(null, "La ip es: " + ip);
             
-//            vista.panel_elegir.removeAll();
+//            vista.panel_el0egir.removeAll();
 //            vista.panel_elegir.revalidate();
 //            vista.panel_elegir.repaint();
             if (bandera != 1)
